@@ -1,0 +1,482 @@
+body {
+    width:240px;
+    height:240px;
+    background-color: #fff;
+    background-image:url("images/decor/floor2.png"), url("images/decor/floor1.png");
+    background-repeat:repeat;
+    background-size:32px 32px;
+    background-attachment: fixed;
+    background-position:0 0;
+    overflow:hidden;
+}
+html, body {
+    cursor: url(images/reticle.png), default;
+}
+.player {
+    position:fixed;
+    top:10px;
+    left:10px;
+    width: 80px;
+    height: 80px;
+    background-position: 0 0;
+    background-size: 80px 80px;
+    z-index: 100000;
+}
+
+.idle {
+    background-image:url("images/player/still/still.png");
+}
+
+.walking {
+    background-image:url("images/player/playerWalking/playerWalking1.png");
+    animation: playerWalk 1s infinite;
+}
+
+@keyframes playerWalk {
+    25% {background-image: url('images/player/playerWalking/playerWalking1.png');}
+    50% {background-image: url('images/player/playerWalking/playerWalking2.png');}
+    75% {background-image: url('images/player/playerWalking/playerWalking3.png');}
+    100% {background-image: url('images/player/playerWalking/playerWalking4.png');}
+}
+
+.gun {
+    position:fixed;
+    top:15px;
+    left:15px;
+    width:43px;
+    height:13px;
+    background-position:0 0;
+    background-size:48px 18px;
+    background-image:url("images/gun.png");
+    background-repeat:no-repeat;
+    transform-origin: top left;
+}
+
+.bullet {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:16px;
+    height:8px;
+    background-position:0 0;
+    background-size:16px 8px;
+    background-image:url("images/bullet.png");
+    background-repeat: no-repeat;
+}
+
+.enemyWalker {
+    background-image:url("images/enemy/walking/walker1.png");
+    position:fixed;
+    width:64px;
+    height:64px;
+    background-position:0 0;
+    background-size:64px 64px;
+    background-repeat:no-repeat;
+    animation:enemyWalk .75s infinite steps(1);
+}
+
+.enemyCrawler {
+    background-image:url("images/enemy/crawler/crawler1.png");
+    position:fixed;
+    width:64px;
+    height:64px;
+    background-position:0 0;
+    background-size:64px 64px;
+    background-repeat:no-repeat;
+    animation:enemyCrawl .75s infinite steps(1);
+}
+
+.laserBeam{
+    position:fixed;
+    width:16px;
+    height:16px;
+    background-position:0 0;
+    background-size:16px 16px;
+    background-image:url("images/laserbeam.png");
+    background-repeat: no-repeat;
+}
+
+@keyframes enemyWalk {
+    0% {background-image:url("images/enemy/walking/walker1.png");}
+    25% {background-image:url("images/enemy/walking/walker2.png");}
+    50% {background-image:url("images/enemy/walking/walker3.png");}
+    100% {background-image:url("images/enemy/walking/walker4.png");}
+}
+
+@keyframes enemyCrawl {
+    0% {background-image:url("images/enemy/crawler/crawler1.png");}
+    50% {background-image:url("images/enemy/crawler/crawler2.png");}
+    100% {background-image:url("images/enemy/crawler/crawler3.png");}
+}
+
+#ammoCount {
+    font-family:"Silkscreen";
+    font-size:20px;
+    opacity: 100%;
+    position:absolute;
+    top:42%;
+    left:30%;
+}
+
+#coinHud {
+    background-color:#333;
+    width:225px;
+    height:80px;
+    position:fixed;
+    bottom:5%;
+    left:5%;
+    opacity:95%;
+    border:#111 4px solid;
+    color:#888;
+    user-select:none;
+}
+
+#coinCount {
+    font-family:"Silkscreen";
+    font-size:30px;
+    opacity:100%;
+    position:absolute;
+    top:15%;
+    left:22%;
+}
+
+#coinLogo {
+    background-size:32px 32px;
+    background-image:url("images/coinDrop.png");
+    width:32px;
+    height:32px;
+    background-repeat:no-repeat;
+    background-position:0 0;
+    position:absolute;
+    left:5%;
+    top:48%
+}
+
+#hpBarBg {
+    background-color:#111;
+    width:210px;
+    height:22px;
+    position:absolute;
+    top:5%;
+    left:3.5%;
+}
+
+#hpBarFg {
+    background-color:#e8c170;
+    width:200px;
+    height:18px;
+    position:absolute;
+    left:5px;
+    top:2px;
+
+}
+
+.reloading{
+    transform-origin: top left;
+    animation:reload .75s linear;
+}
+
+.mushroom {
+    height:102px;
+    width:64px;
+    background-position:0 0;
+    background-image:url(images/decor/decor1.png);
+    background-size:64px 102px;
+    z-index:10000;
+
+}
+
+.rocks {
+    width:60px;
+    height:36px;
+    background-position:0 0;
+    background-image:url(images/decor/decor2.png);
+    background-size:60px 36px;
+    z-index:10000;
+}
+
+.monument1 {
+    width:108px;
+    height:180px;
+    background-position:0 0;
+    background-image:url(images/decor/monument1.png);
+    background-size:108px 180px;
+    z-index:10000;
+}
+
+.monument2 {
+    width:120px;
+    height:160px;
+    background-position:0 0;
+    background-image:url(images/decor/healingMonument.png);
+    background-size:120px 160px;
+    z-index:10000;
+}
+
+#fountainPopup {
+    font-family: "Silkscreen";
+    font-size:20px;
+    color:#fefefe;
+    position:absolute;
+    top:0px;
+    left:36%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+    animation:fountainPopupHover 2s linear infinite;
+}
+
+@keyframes fountainPopupHover {
+    0% {top:0px;}
+    50% {top:10px;}
+    100% {top:0px;}
+}
+
+#decor1 {position:fixed;top:25%;left:50%;}
+#decor2 {position:fixed;top:35%;left:10%;}
+#decor3 {position:fixed;top:60%;right:60%;}
+#decor4 {position:fixed;top:350px;left:950px;}
+#decor5 {position:fixed;top:85%;right:35%;}
+#decor6 {position:fixed;top:90%;right:20%;}
+#decor7 {position:fixed;top:10%;right:10%;}
+#decor8 {position:fixed;top:20%;right:13%;}
+#decor9 {position:fixed;top:80%;right:17%;}
+#decor10 {position:fixed;top:5%;left:13%;}
+
+@keyframes reload {
+    100% {transform:rotate(360deg);}
+}
+
+#info {
+    position:absolute;
+    background-color: #333;
+    width:200px;
+    height:80px;
+    border:4px #111 solid;
+    bottom:5%;
+    right:5%;
+    opacity:95%;
+    color:#888;
+    user-select: none;
+}
+
+#ammoLogo {
+    background-image:url("images/bulletLogo.png");
+    background-size:20px 20px;
+    width:20px;
+    height:20px;
+    background-repeat:no-repeat;
+    background-position:0 0;
+    position:absolute;
+    right:10%;
+    top:65%;
+    
+}
+
+.kamehamehaLogo {
+    background-size:32px 32px;
+    background-image:url("images/kamehameha.png");
+    width:32px;
+    height:32px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    position:absolute;
+    right:30%;
+    top:10%;
+}
+
+.kamehamehaEmpty {
+    background-size:32px 32px;
+    background-image:url("images/kamehamehaEmpty.png");
+    width:32px;
+    height:32px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    position:absolute;
+    right:30%;
+    top:10%;
+}
+
+.kamehameha {
+    background-size:64px 64px;
+    background-image:url("images/kamehameha.png");
+    width:64px;
+    height:64px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    position:fixed;
+    top:5px;
+    left:5px;
+    transform: scaleX(1);
+}
+
+.ammoDrop {
+    background-size:32px 32px;
+    background-image:url("images/bulletLogo.png");
+    width:32px;
+    height:32px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    position:fixed;
+    top:5px;
+    left:5px;
+}
+
+.coinDrop {
+    background-size:32px 32px;
+    background-image:url("images/coinDrop.png");
+    width:32px;
+    height:32px;
+    background-repeat:no-repeat;
+    background-position:0 0;
+    position:fixed;
+    top:5px;
+    left:5px;
+}
+
+#dashLogo {
+    background-size:40px 40px;
+    background-image:url("images/dashLogo2.png");
+    width:40px;
+    height:40px;
+    background-repeat:no-repeat;
+    background-position:0 0;
+    position:absolute;
+    top:5%;
+    right:7%;
+}
+
+#deathPopup {
+    background-color:#333;
+    width:800px;
+    height:500px;
+    position:fixed;
+    top:15%;
+    left:22%;
+    z-index:9999999999;
+    border:5px #111 solid;
+    border-radius:15px;
+    display:none;
+}
+
+#deathText {
+    font-family:"Silkscreen";
+    font-size:100px;
+    color:#fff;
+    text-align:center;
+    text-shadow: 2px 2px 3px black;
+
+}
+
+#deathButton {
+    width:200px;
+    height:100px;
+    border:none;
+    background-color:#e8c170;
+    position:absolute;
+    left:20%;
+    bottom:10%;
+    border:#bf9e5b 5px solid;
+    border-radius:15px;
+
+    font-size:20px;
+    font-family:"Silkscreen";
+    
+}
+
+#quitButton {
+    width:200px;
+    height:100px;
+    border:none;
+    background-color:#a53030;
+    position:absolute;
+    left:50%;
+    bottom:10%;
+    border:#752438 5px solid;
+    border-radius:15px;
+
+    font-size:20px;
+    font-family:"Silkscreen";
+    
+}
+
+#deathButton:active {
+    background-color:#bf9e5b;
+    transform: translateY(4px);
+}
+
+#quitButton:active {
+    background-color:#752438;
+    transform: translateY(4px);
+}
+
+#pausePopup {
+    width:500px;
+    height:600px;
+    border:#111 5px solid;
+    position:fixed;
+    top:12%;
+    left:35%;
+    background-color: #333;
+    z-index: 100000000;
+    display:none;
+}
+
+#pauseText {
+    color:#fff;
+    font-family:"Silkscreen";
+    font-size:65px;
+    text-align:center;
+    text-shadow: 5px 2px #111;
+}
+
+#exitHome {
+    width:250px;
+    height:100px;
+    border:none;
+    background-color:#a53030;
+    position:absolute;
+    left:25%;
+    top:50%;
+    border:#752438 5px solid;
+    border-radius:15px;
+
+    font-size:20px;
+    font-family:"Silkscreen";
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#exitHome:active {
+    background-color:#752438;
+    transform: translateY(4px);
+}
+
+#exitHome:hover {
+    transform:translateY(10px);
+}
+
+#resumeBtn {
+    width:250px;
+    height:100px;
+    border:none;
+    background-color:#3eda39;
+    position:absolute;
+    left:25%;
+    top:30%;
+    border:#33b52e 5px solid;
+    border-radius:15px;
+
+    font-size:20px;
+    font-family:"Silkscreen";
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#resumeBtn:active {
+    background-color:#33b52e;
+    transform: translateY(4px);
+}
+
+#resumeBtn:hover {
+    transform:translateY(10px);
+}
