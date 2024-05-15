@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip's Portfolio | Projects</title>
+    <link rel="stylesheet" href="../css/projects.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+    </style>
+</head>
+<body>
+    <div id="headerbar">
+        <button id="homeBtn" onclick="changePage('../index.html')"></button>
+
+        <button id="gallery" class="headerBtn" onclick="changePage('gallery.html')"><p class="btnText">Gallery</p></button>
+        <button id="contact" class="headerBtn" onclick="changePage('contact.html')"><p class="btnText">Contact</p></button>
+        <button id="extras" class="headerBtn" onclick="changePage('../gamblingHub/index.html')"><p class="btnText">Casino</p></button>
+        <button id="infoBtn" onclick="showPopupInfo()"></button>
+    </div>
+
+    <div id="marker"></div>
+    <div id="spyglass"></div>
+
+    <div id="firstTimePopup">
+        <h1 id="intro">If it's treasure you seek, then play some games to find thy dreams. For in these projects are untold riches of countless generations.</h1>
+    </div>
+
+    <div id="island" class="island3"></div>
+    <ul id="projectList">
+        <li><div onclick="changePage(`../projects/vibesBeats/index.html`)" id="vibesBeats" class="titleScreen titleScreenActive titleHover"></div></li>
+        <li><div onclick="changePage(`../projects/endlessShooter/index.html`)" id="endlessShooter" class="titleScreen titleScreenInactive"></div></li>
+    </ul>
+    
+    <div id="spyglassOverlay" class="spyglassOverlay">
+        <button id="exitOverlay" onclick="spyglassExit()">X</button>
+
+        <div id="arrowLeft" class="arrowL"></div>
+        <div id="arrowRight" class="arrowR"></div>
+    </div>
+
+
+    <script src="../js/projects.js"></script>
+</body>
+</html>

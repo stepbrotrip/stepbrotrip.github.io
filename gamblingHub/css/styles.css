@@ -1,0 +1,384 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+body:before {
+  content: "";
+  position: fixed;
+  z-index: -10;
+  inset: 0 0 0 0;
+  background-image:url(../images/background.png);
+  background-size:102% 102%;
+  background-position:0 0;
+  background-repeat:no-repeat;
+  -webkit-filter: blur(1px) brightness(0.5);
+  -moz-filter: blur(1px) brightness(0.5);
+  -ms-filter: blur(1px) brightness(0.5);
+  -o-filter: blur(1px) brightness(0.5);
+  filter: blur(1px) brightness(0.5);
+  left:-1vw;
+  top:-1vh;
+  width:103vw;
+  height:103vh;
+}
+
+#gameChoice {
+    width:101vw;
+    height:90vh;
+    position:fixed;
+    left:-1%;
+    top:10vh;
+
+}
+
+label {
+    font-family: "Silkscreen";
+    color:#333;
+    font-size:16px;
+}
+
+p {
+    font-family: "Silkscreen";
+    color:#333;
+    font-size:16px;
+}
+
+.classicGameBoard {
+    width:50vw;
+    height:80vh;
+    background-size:100% 100%;
+    position:fixed;
+    top:50%;
+    transform:translateY(-50%);
+    right:5%;
+    border-radius: 5px;
+    background-color: #f2cb9b;
+    border:#333 2px solid;
+    z-index:50;
+}
+
+.classicGameSettings {
+    width:20vw;
+    height:75vh;
+    position:fixed;
+    top:12%;
+    right:35%;
+    background-color:#e3a084;
+    will-change:transform;
+    transition: transform 0.6s ease;
+    border-radius:5px 0 0 5px;
+    border:#333 2px solid;
+    z-index:-1;
+}
+
+.openSettings {
+    transform:translateX(-97%);
+}
+
+.hideSettings {
+    transform:translateX(0%);
+}
+
+.hideSettingsBtn {
+    color:#333;
+    width:2vw;
+    height:2vh;
+    background:none;
+    border:none;
+    position:absolute;
+    left:5%;
+    top:2%;
+    font-size:25px;
+    will-change:transform;
+    transition:transform 0.3s ease;
+}
+
+.hideSettingsBtn:hover {
+    transform: translateY(5px);
+}
+
+.hideSettingsBtn:active {
+    color:#888;
+}
+
+.mainStartButton {
+    background:none;
+    background-color:#b77bd5;
+    width:10vw;
+    height:5vh;
+    border:none;
+    will-change:transform;
+    transition:transform 0.3s ease;
+    border-radius:5px;
+    border:#333 2px solid;
+}
+
+.mainStartButton:hover {
+    transform:translateY(5px);
+}
+
+.npc {
+    background-size:100% 100%;
+    width:15rem;
+    height:15rem;
+    background-position:0 0;
+    will-change: transform;
+    transition:transform 0.3s ease;
+}
+
+.npc:hover {
+    transform:translateY(5px);
+}
+
+.loanBtn {
+    background:none;
+    border:none;
+    background-color: #b77bd5;
+    width: 7.5rem;
+    height:2.5rem;
+    will-change: transform;
+    transition:transform 0.3s ease;
+    border-radius:5px;
+}
+
+.loanBtn:hover {
+    transform:translateY(5px);
+}
+
+#acceptLoanBtn {
+    position:fixed;
+    left:9%;
+    top:52%;
+    display:none;
+    background-color:#60c160;
+    border:#333 2px solid;
+}
+
+#declineLoanBtn {
+    positioN:fixed;
+    left:9%;
+    top:60%;
+    display:none;
+    border:#333 2px solid;
+    background-color: #d36262;
+}
+
+#chatBox {
+    background-size:100% 100%;
+    width:20rem;
+    height:10rem;
+    background-position:0 0;
+    will-change:transform;
+    transition:transform 0.75s ease;
+    background-image:url(../images/chatbox.png);
+    position:fixed;
+    left:21%;
+    top:84%;
+    transform:translateY(100%);
+}
+
+#loanSharkDoor {
+    width:6.5vw;
+    height:12vh;
+    position:fixed;
+    z-index:2;
+    background-image:url(../images/door.png);
+    background-size:100% 100%;
+    bottom:10%;
+    left:1%;
+}
+
+#pirateKingDialogue {
+    font-family:"Silkscreen";
+    font-size: 15px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+#pirateKing {
+    position:fixed;
+    bottom:0%;
+    left:5%;
+    z-index:10;
+    background-image:url(../images/pirateKing.png);
+}
+
+#betAmount {
+    position:absolute;
+    left:30%;
+    top:15%;
+
+}
+
+#betLabel {
+    position:absolute;
+    left:5%;
+    top:15%;
+}
+
+#amountOfMines {
+    position:absolute;
+    left:30%;
+    top:25%;
+}
+
+#minesLabel {
+    position:absolute;
+    left:5%;
+    top:25%;
+}
+
+#minesNumber {
+    position:absolute;
+    right:5%;
+    top:22%;
+}
+
+#betNumber {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    width: 7rem; /* Adjust the width as needed */
+    height: 1.5rem; /* Adjust the height as needed */
+    padding: 0.25rem; /* Add padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in width and height */
+    border-radius: 3px;
+    font-size: 15px; 
+
+    color:#333;
+}
+
+#minesNumber {
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    width: 7rem; /* Adjust the width as needed */
+    height: 1.5rem; /* Adjust the height as needed */
+    padding: 0.25rem; /* Add padding as needed */
+    box-sizing: border-box; /* Ensure padding is included in width and height */
+    border-radius: 3px;
+    font-size: 15px; 
+
+    color:#333;
+}
+
+#tileGrid {
+    position:absolute;
+    left:7%;
+    top:9%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+#startMinesButton {
+    position:absolute;
+    left:25%;
+    top:50%;
+}
+
+#cashOutButton {
+    position:absolute;
+    top:60%;
+    left:25%;
+}
+
+.tile {
+    width: 8vw;
+    height: 12vh;
+    background-image:url("../images/blankTile.png");
+    background-size:100% 100%;
+}
+
+#amountOfDabloons {
+    position:absolute;
+    top:2%;
+    left:1%;
+}
+
+#debtLabel {
+    position:absolute;
+    top:2%;
+    left:18%;
+}
+
+.headerLabel {
+    font-family:"silkscreen";
+    font-size:2vh;
+    color:#ffffff;
+    background-color:#434343ce;
+    padding-top:2vh;
+    padding-bottom:2vh;
+    text-align:center;
+    width:15vw;
+}
+
+#giveMoney {
+    position:fixed;
+    top:15%;
+    left:12%;
+}
+
+#chooseMines {
+    position:fixed;
+    top:15%;
+    left:1%;
+}
+
+#homeBtn {
+    position:absolute;
+    top:22%;
+    left:6%;
+    z-index:1;
+}
+
+/*input*/
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input[type='range'] {
+        -webkit-appearance: none;
+        overflow: hidden;
+        width: 8rem;
+        height:1rem;
+        background-color: #777;
+        border-radius:5px;
+        border:#333 2px solid;
+    }
+    
+    input[type='range']::-webkit-slider-runnable-track {
+        height: 1rem;
+        -webkit-appearance: none;
+        color: #777;
+
+    }
+    
+    input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance:none;
+        height: 1rem;
+        width: 1rem;
+        cursor: ew-resize;
+        background: #434343;
+        box-shadow: -80px 0 0 80px #b77bd5;
+        border-radius:5px;
+
+    }   
+
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+    background-color: #b77bd5; 
+}
+input[type="range"]::-moz-range-track {  
+    background-color: #b77bd5;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+    background-color: #777; 
+}
+input[type="range"]::-ms-fill-upper {  
+    background-color: #b77bd5;
+}

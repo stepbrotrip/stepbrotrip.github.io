@@ -1,0 +1,425 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+body:before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0 0 0 0;
+  background-image:url(../images/projectsBg2.png);
+  background-size:cover;
+  background-position:-60px 0;
+  background-repeat:no-repeat;
+}
+
+ul {
+    list-style:none;
+}
+
+#headerbar {
+    position: fixed;
+    top:5%;
+    left:5%;
+    width:100vw;
+    height:300px;
+}
+
+#intro {
+    font-family:'Silkscreen';
+    font-size:20px;
+    color:#fff;
+    text-align:center;
+    width:18vw;
+    height:60vh;
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -20%);
+}
+
+#firstTimePopup {
+    width:29vw;
+    height:70vh;
+    background-image:url(../images/scroll.png);
+    background-size:100% 100%;
+    background-position:0 0;
+    position:fixed;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    display:none;
+
+}
+
+#infoBtn {
+    background:none;
+    border:none;
+    background-image:url(../images/info.png);
+    width:80px;
+    height:80px;
+    will-change:transform;
+    transition:transform 0.3s ease;
+    background-size:100% 100%;
+    position:absolute;
+    left:88%;
+}
+
+#infoBtn:hover {
+    transform:translateY(5px);
+}
+
+#gallery {
+    position:absolute;
+    left:50%;
+}
+
+#contact {
+    position:absolute;
+    left:61%;
+}
+
+#extras {
+    position:absolute;
+    left:72%;
+}
+
+.headerBtn {
+    width:10%;
+    height:60px;
+    background:none;
+    border:none;
+    font-family:"Silkscreen";
+    font-size:17px;
+    color: #DDDDDD;
+    text-shadow:3px 3px  2px #111;
+    transition: transform 0.3s ease; 
+    background-color:#333;
+    border-radius:15px;
+}
+
+
+.headerBtn:hover {
+    transform: translateY(-5px);
+    background-color: rgba(87, 89, 187, 0.6);
+    border-radius:15px;
+}
+
+#homeBtn {
+    position:absolute;
+    background:#333;
+    background-image:url("../images/octoLogo.png");
+    background-size:64px 64px;
+    background-position:7px 7px;
+    background-repeat:no-repeat;
+    width:88px;
+    height:88px;
+    border:5px #111 solid;
+    border-radius:100%;
+    top:-5%;
+}
+
+#marker {
+    position:fixed;
+    height:64px;
+    width:5%;
+    background-position:0 0;
+    background-image:url("../images/marker/marker1.png");
+    background-size:100% 100%;
+    top:16%;
+    left:47%;
+    animation: markerHover 2s infinite, markerSpin 1s infinite steps(3);
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+@keyframes markerSpin {
+    33% {background-image:url("../images/marker/marker1.png");}
+    66% {background-image:url("../images/marker/marker2.png");}
+    99% {background-image:url("../images/marker/marker3.png");}
+}
+
+#spyglass {
+    position:fixed;
+    height:200px;
+    width:14%;
+    background-position:0 0;
+    background-image:url("../images/spyglass.png");
+    background-size:100% 100%;
+    top:28%;
+    left:42.5%;
+}
+
+@keyframes markerHover {
+    0% {top:16%;}
+    50% {top:18%;}
+    100% {top:16%;}
+}
+
+.spyglassOverlay {
+    width:100vw;
+    height:100vh;
+    display:none;
+    position:fixed;
+    top:0%;
+    z-index:10000;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+.spyglassOverlay.spyglassStart {
+    background-image:url(../images/spyglassOverlay/spyglassOverlay5.png);
+    background-size:cover;
+    background-position:-60px 0;
+    background-repeat:no-repeat;
+    width:100vw;
+    height:100vh;
+    animation:spyglassStart 1s infinite steps(1);
+    
+}
+
+.spyglassOverlay.spyglassFinish {
+    background-image:url(../images/spyglassOverlay/spyglassOverlay1.png);
+    background-size:cover;
+    background-position:-60px 0;
+    background-repeat:no-repeat;
+    width:100vw;
+    height:100vh;
+}
+
+.spyglassOverlay.spyglassExit {
+    background-image:url(../images/spyglassOverlay/spyglassOverlay1.png);
+    background-size:cover;
+    background-position:-60px 0;
+    background-repeat:no-repeat;
+    width:100vw;
+    height:100vh;
+    animation:spyglassExit 1s infinite steps(1);
+}
+
+body.spyglassBackground:before {
+    background-image: url('../images/projectsBg3.png');
+}
+
+@keyframes spyglassStart {
+    0% {background-image:url(../images/spyglassOverlay/spyglassOverlay5.png);}
+    20% {background-image:url(../images/spyglassOverlay/spyglassOverlay4.png);}
+    40% {background-image:url(../images/spyglassOverlay/spyglassOverlay3.png);}
+    60% {background-image:url(../images/spyglassOverlay/spyglassOverlay2.png);}
+    80% {background-image:url(../images/spyglassOverlay/spyglassOverlay1.png)}
+    100% {background-image:url(../images/spyglassOverlay/spyglassOverlay1.png)}
+}
+
+@keyframes spyglassExit {
+    0% {background-image:url(../images/spyglassOverlay/spyglassOverlay1.png);}
+    20% {background-image:url(../images/spyglassOverlay/spyglassOverlay2.png);}
+    40% {background-image:url(../images/spyglassOverlay/spyglassOverlay3.png);}
+    60% {background-image:url(../images/spyglassOverlay/spyglassOverlay4.png);}
+    80% {background-image:url(../images/spyglassOverlay/spyglassOverlay5.png)}
+    100% {background-image:url(../images/spyglassOverlay/spyglassOverlay5.png)}
+}
+
+#exitOverlay {
+    background-color:#b14141;
+    border:none;
+    font-family:"Silkscreen";
+    font-size:20px;
+    text-align:center;
+    width:3%;
+    height:5%;
+    border-radius:100%;
+    position:absolute;;
+    top:3%;
+    left:2%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+    user-select:none;
+}
+
+#exitOverlay:hover {
+    transform: translateY(-5px);
+}
+
+#exitOverlay:active {
+    background-color:#7e2e2e;
+}
+
+#island {
+    position:fixed;
+    z-index:10;
+    display:none;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+    top:45%;
+    left:33%;
+}
+
+@keyframes exitRight {
+    0% {left:33%;}
+    100% {left:100%;}
+}
+
+@keyframes exitLeft {
+    0% {left:33%;}
+    100% {left:-200px;}
+}
+
+@keyframes enterRight {
+    0%{left:100%;}
+    100% {left:33%;}
+}
+
+@keyframes enterLeft {
+    0%{left:-200px;}
+    100% {left:33%;}
+}
+
+.enterRight {
+    animation: enterRight 1s linear;
+}
+.enterLeft {
+    animation: enterLeft 1s linear;
+}
+.exitLeft {
+    animation: exitLeft 1s linear;
+}
+.exitRight {
+    animation: exitRight 1s linear;
+}
+
+.island1 {
+    background-image:url(../images/islands/island1.png);
+    background-size:512px 256px;
+    background-position:0 0;
+    height:256px;
+    width:512px;
+
+}
+
+.island2 {
+    background-image:url(../images/islands/island2.png);
+    background-size:512px 256px;
+    background-position:0 0;
+    height:256px;
+    width:512px;
+
+}
+
+.island3 {
+    background-image:url(../images/islands/island3.png);
+    background-size:512px 256px;
+    background-position:0 0;
+    height:256px;
+    width:512px;
+
+}
+
+.island4 {
+    background-image:url(../images/islands/island4.png);
+    background-size:512px 256px;
+    background-position:0 0;
+    height:256px;
+    width:512px;
+
+}
+
+.island5 {
+    background-image:url(../images/islands/island5.png);
+    background-size:512px 256px;
+    background-position:0 0;
+    height:256px;
+    width:512px;
+
+}
+
+#arrowLeft {
+    position:absolute;
+    left:10%;
+    top:40%;
+    z-index:1000000000;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+    background-image:url(../images/arrowL.png);
+    background-size:128px 128px;
+    background-position:0 0;
+    height:128px;
+    width:128px;
+}
+
+#arrowRight {
+    position:absolute;
+    right:10%;
+    top:40%;
+    z-index:10000000000;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+    background-image:url(../images/arrowR.png);
+    background-size:128px 128px;
+    background-position:0 0;
+    height:128px;
+    width:128px;
+}
+
+#arrowRight:hover {
+    transform:translateY(10px);
+}
+
+#arrowLeft:hover {
+    transform:translateY(10px); 
+}
+
+@keyframes titleHover {
+    0% {top:25%;}
+    50% {top:27%;}
+    100% {top:25%;}
+}
+
+.titleScreen {
+    border-radius:15px;
+    border:#111 5px solid;
+    z-index:10;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+.titleScreenActive {
+    position:fixed;
+    top:25%;
+    left:33%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+.titleScreenInactive {
+    position:fixed;
+    top:25%;
+    left:-200px;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+.titleHover {
+    animation: titleHover 2s infinite;
+}
+
+#projectList {
+    display:none;
+}
+
+#vibesBeats {
+    background-image: url(../images/titleScreens/vibesBeats.png);
+    background-size:100%  100%;
+    background-position:0 0;
+    width:500px;
+    height:300px;
+}
+
+#endlessShooter {
+    background-image: url(../images/titleScreens/endlessShooter.png);
+    background-size:100% 100%;
+    background-position:0 0;
+    width:500px;
+    height:300px;
+}

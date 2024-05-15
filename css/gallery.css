@@ -1,0 +1,243 @@
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+body:before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0 0 0 0;
+  background-color:#555;
+}
+
+
+#titleText {
+    font-family:"Silkscreen";
+    font-size:80px;
+    position:absolute;
+    top:-60%;
+    left:10%;
+}
+
+#airPirates {
+    background-image:url(../images/gallery/airPirates.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    width:400px;
+    height:200px;
+    position:absolute;
+    top:30%;
+    left:5%;
+    z-index:9;
+    border-radius:15px;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#spaceScene {
+    background-image:url(../images/gallery/spaceScene.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    width:400px;
+    height:200px;
+    position:absolute;
+    top:30%;
+    left:35%;
+    z-index:9;
+    border-radius:15px;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#spaceDrive {
+    background-image:url(../images/gallery/spaceDrive.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    width:400px;
+    height:200px;
+    position:absolute;
+    top:30%;
+    left:65%;
+    z-index:9;
+    border-radius:15px;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#kracken {
+    background-image:url(../images/gallery/kracken.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    border-radius:15px;
+    width:400px;
+    height:200px;
+    position:absolute;
+    top:70%;
+    left:5%;
+    z-index:9; 
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#airPirateFrame {
+    background-image:url(../images/gallery/airPirtaesBorder.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    width:400px;
+    height:52px;
+    position:absolute;
+    z-index:10;
+    top:52%;
+    left:5%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#spaceSceneFrame {
+    background-image:url(../images/gallery/spaceSceneFrame.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    width:400px;
+    height:52px;
+    position:absolute;
+    z-index:10;
+    top:52%;
+    left:35.5%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#spaceDriveFrame {
+    background-image:url(../images/gallery/spaceDriveFrame.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    width:400px;
+    height:52px;
+    position:absolute;
+    z-index:10;
+    top:52%;
+    left:65%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#krackenFrame {
+    background-image:url(../images/gallery/chillFrame.png);
+    background-position:0 0;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    width:448px;
+    height:84px;
+    position:absolute;
+    z-index:10;
+    top:117%;
+    left:3.25%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#headerbar {
+    position: fixed;
+    width:99vw;
+    height:100px;
+    background-color:#333;
+    border-radius:30px;
+    left:.5%;
+    top:2%;
+    z-index:10000;
+
+}
+
+#projects {
+    position:absolute;
+    left:50%;
+    top:20%;
+}
+
+#contact {
+    position:absolute;
+    left:61%;
+    top:20%;
+}
+
+#extras {
+    position:absolute;
+    left:72%;
+    top:20%;
+}
+
+.headerBtn {
+    width:10%;
+    height:60px;
+    background:none;
+    border:none;
+    font-family:"Silkscreen";
+    font-size:17px;
+    color: #DDDDDD;
+    text-shadow:3px 3px  2px #111;
+    transition: transform 0.3s ease; 
+    background-color:#222;
+    border-radius:15px;
+}
+
+
+.headerBtn:hover {
+    transform: translateY(-5px);
+    background-color: rgba(87, 89, 187, 0.6);
+    border-radius:15px;
+}
+
+#homeBtn {
+    position:absolute;
+    background:#333;
+    background-image:url("../images/octoLogo.png");
+    background-size:60px 60px;
+    background-position:6px 7px;
+    background-repeat:no-repeat;
+    width:82px;
+    height:82px;
+    border:5px #111 solid;
+    border-radius:100%;
+    top:5%;
+    left:2%;
+}
+
+#exitOverlay {
+    background-color:#b14141;
+    border:none;
+    font-family:"Silkscreen";
+    font-size:20px;
+    text-align:center;
+    width:3%;
+    height:5%;
+    border-radius:100%;
+    position:absolute;
+    z-index:10001;
+    top:20%;
+    left:4.5%;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+    user-select:none;
+    display:none;
+}
+
+#exitOverlay:hover {
+    transform: translateY(-5px);
+}
+
+#exitOverlay:active {
+    background-color:#7e2e2e;
+}
+
+#blur {
+    width:100vw;
+    height:1000vh;
+    background-color:rgba(128, 128, 128, 0.197);
+    filter: blur(5);
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dont Gamble Kids</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 id="amountOfDabloons" class="headerLabel"></h1>
+        <h1 id="debtLabel" class="headerLabel"></h1>
+        <button id="homeBtn" class="mainStartButton" onclick="changePage(`../index.html`)">Home</button>
+    </div>
+    <div id="gameChoice">
+        <button id="chooseMines" class="mainStartButton" onclick="openMines()">Open Mines</button>
+        <div id="mineBoard" class="classicGameBoard">
+            <div id="tileGrid">
+                
+            </div>
+        </div>
+        <div id="mineSettings" class="classicGameSettings">
+            <button id="hideMineSettings" class="hideSettingsBtn" onclick="hideSettings()">></button>
+            <label for="amountOfMines" id="minesLabel">Mines: </label>
+            <input id="amountOfMines" name="amountOfMines" type="range" min="1" max="24" step="1" value="1">
+            <input id="minesNumber" name="minesNumber" type="number" min="1" max="24" step="1">
+            <label for="betAmount" id="betLabel">Bet: </label>
+            <input id="betAmount" name="betAmount" type="range" min="0.1" step="1" max="1000" value="0.5">
+            <input id="betNumber" name="betNumber" type="number" min="0.1" step="0.1" value="0.5">
+            <button id="startMinesButton" class="mainStartButton" onclick="startMines()">Start</button>
+            <button id="cashOutButton" class="mainStartButton" onclick="cashOut()">Cash Out</button>
+        </div>
+        <div id="caseBoard">
+
+        </div>
+    </div>
+
+    <div id="pirateKing" class="npc"></div>
+    <div id="chatBox">
+        <h1 id="pirateKingDialogue"></h1>
+    </div>
+    <button id="acceptLoanBtn" class="loanBtn" onclick="acceptLoan()">Accept Loan</button>
+    <button id="declineLoanBtn" class="loanBtn" onclick="declineLoan()">Decline Loan</button>
+    <button id="giveMoney" class="mainStartButton" onclick="payDebt()">Pay Debt</button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
