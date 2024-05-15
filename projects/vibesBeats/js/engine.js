@@ -213,72 +213,74 @@ function handleKeyDown(event) {
     if (event.defaultPrevented) {
         return; // Do nothing if event already handled
     }
-        const gameArea = document.getElementById("gameArea");
-        //handle specific keys
+    
+    const gameArea = document.getElementById("gameArea");
+    //handle specific keys
+    
+    switch (event.key) {
+        case "ArrowLeft":
+            // Handle left arrow key press
+            if (!isPressed[0] && !pause) {
+                clickedArrow(0);
+
+                changeSprite(0);
+                console.log("[!]Left arrow key pressed | isPressed " + isPressed[0]);
+                isPressed[0] = true;
+            }
+            break;
+
+        case "ArrowDown":
+            // Handle down arrow key press
+            if (!isPressed[1] && !pause) {
+                clickedArrow(1);
+
+                changeSprite(1);
+                console.log("[!]Down arrow key pressed | isPressed " + isPressed[1]);
+                isPressed[1] = true;
+            }
+            break;
+
+        case "ArrowUp":
+            // Handle up arrow key press
+            if (!isPressed[2] && !pause) {
+                clickedArrow(2);
+
+                changeSprite(2);
+                console.log("[!]Up arrow key pressed | isPressed " + isPressed[2]);
+                isPressed[2] = true;
+                console.log(fallingArrows);
+            }
+            break;
+
+        case "ArrowRight":
+            // Handle right arrow key press
+            if (!isPressed[3] && !pause) {
+                //collision Module
+                clickedArrow(3);
+
+                changeSprite(3);
+                console.log("[!]Right arrow key pressed | isPressed " + isPressed[3]);
+                isPressed[3] = true;
+            }
+            break;
         
-        switch (event.key) {
-            case "a":
-                // Handle left arrow key press
-                if (!isPressed[0] && !pause) {
-                    clickedArrow(0);
+        case "Escape":
+            if (!pause){
+                pause = true;
+            }else if (pause){
+                pause = false;
+            }
+            console.log("paused...");
+            break;
 
-                    changeSprite(0);
-                    console.log("[!]Left arrow key pressed | isPressed " + isPressed[0]);
-                    isPressed[0] = true;
-                }
-                break;
+        default:
+            // Handle other keys if needed
+            break;
+    }
 
-            case "s":
-                // Handle down arrow key press
-                if (!isPressed[1] && !pause) {
-                    clickedArrow(1);
-
-                    changeSprite(1);
-                    console.log("[!]Down arrow key pressed | isPressed " + isPressed[1]);
-                    isPressed[1] = true;
-                }
-                break;
-
-            case "k":
-                // Handle up arrow key press
-                if (!isPressed[2] && !pause) {
-                    clickedArrow(2);
-
-                    changeSprite(2);
-                    console.log("[!]Up arrow key pressed | isPressed " + isPressed[2]);
-                    isPressed[2] = true;
-                    console.log(fallingArrows);
-                }
-                break;
-
-            case "l":
-                // Handle right arrow key press
-                if (!isPressed[3] && !pause) {
-                    //collision Module
-                    clickedArrow(3);
-
-                    changeSprite(3);
-                    console.log("[!]Right arrow key pressed | isPressed " + isPressed[3]);
-                    isPressed[3] = true;
-                }
-                break;
-            
-            case "Escape":
-                if (!pause){
-                    pause = true;
-                }else if (pause){
-                    pause = false;
-                }
-                console.log("paused...");
-                break;
-
-            default:
-                // Handle other keys if needed
-                break;
-        }
-
-        sleep(100);
+    sleep(100);
 }
+
 
 function clickedArrow(direction) {
     for (let x = 0; x < fallingArrows.length; x++) {
@@ -329,54 +331,50 @@ function handleKeyUp(event) {
         return; // Do nothing if event already handled
     }
 
-        //handle specific keys
-        switch (event.key) {
-            case "a":
-                if (!pause)
-                {
+    //handle specific keys
+    switch (event.key) {
+        case "ArrowLeft":
+            if (!pause) {
                 // Handle left arrow key release
                 resetSprites(0);
                 console.log("[!]Left arrow key lifted | isPressed " + isPressed[0]);
                 isPressed[0] = false;
-                }
-                break;
+            }
+            break;
 
-            case "s":
-                if (!pause)
-                {
+        case "ArrowDown":
+            if (!pause) {
                 // Handle down arrow key release
                 resetSprites(1);
                 console.log("[!]Down arrow key lifted | isPressed " + isPressed[1]);
                 isPressed[1] = false;
-                }
-                break;
+            }
+            break;
 
-            case "k":
-                if (!pause)
-                {
+        case "ArrowUp":
+            if (!pause) {
                 // Handle up arrow key release
                 resetSprites(2);
                 console.log("[!]Up arrow key lifted | isPressed " + isPressed[2]);
                 isPressed[2] = false;
-                }
-                break;
+            }
+            break;
 
-            case "l":
-                if (!pause)
-                {
+        case "ArrowRight":
+            if (!pause) {
                 // Handle right arrow key release
                 resetSprites(3);
                 console.log("[!]Right arrow key lifted | isPressed " + isPressed[3]);
                 isPressed[3] = false;
-                }
-                break;
+            }
+            break;
 
-            default:
-                // Handle other keys if needed
-                break;
-        }
+        default:
+            // Handle other keys if needed
+            break;
+    }
 
-        sleep(100);
+    sleep(100);
 }
 
 function changeSprite(arrowId) {
