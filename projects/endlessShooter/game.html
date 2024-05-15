@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Survivor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+      </style>
+</head>
+<body>
+    <div id="deathPopup">
+        <h1 id="deathText">You Lost!! <br> Restart?</h1>
+        <button id="deathButton" onclick="restart()">why not</button>
+        <button id="quitButton" onclick="exit()">nah</button>
+    </div>
+
+    <div id="pausePopup">
+        <h1 id="pauseText">Paused</h1>
+        <button id="resumeBtn" onclick="unpause()">Resume</button>
+        <button id="exitHome" onclick="exit()">Leave</button>
+    </div>
+    <div id="ritualSkullLogo"></div><h1 id="ritualSkullCount">00</h1>
+    <div id="coinHud" class="crt">
+        <div id="coinLogo"></div>
+        <h1 id="coinCount">000</h1>
+        <div id="hpBarBg">
+            <div id="hpBarFg"></div>
+        </div>
+    </div>
+    
+    <div id="hud" class="crt">
+
+        <div id="info" class="crt">
+            <div id="ammoLogo"></div>
+            <h1 id="ammoCount">24/156</h1>
+            <div id="dashLogo"></div>
+            <div class="kamehamehaLogo" id="kamehamehaLogo"></div>
+        </div>
+    </div>
+
+    <div id="upstairs">
+        <div class="vignette-overlay-upstairs"></div>
+        <div id="helicopter"><p id="helicopterPopup" class="popup">[F]</p></div>
+        <div id="helipad"></div>
+        <h1 id="helicopterCount"></h1>
+
+        <div id="decor1" class="mushroom"></div>
+        <div id="decor2" class="mushroom"></div>
+        <div id="decor3" class="monument1"></div>
+        <div id="decor4" class="monument2"><p id="fountainPopup" class="popup">[F]</p></div>
+        <div id="decor5" class="rocks"></div>
+        <div id="decor9" class="mushroom"></div>
+        <div id="decor6" class="rocks"></div>
+        <div id="decor7" class="mushroom"></div>
+        <div id="decor8" class="rocks"></div>
+        <div id="decor10" class="mushroom"></div>
+
+        <div id="undergroundEntrance"><p id="entrancePopup">[F]</p></div>
+        <div class="vignette-overlay"></div>
+    </div>
+    <div id="underGround">
+        <div id="ladder"><p id="ladderPopup">[F]</p></div>
+        <div id="bossBarBg">
+            <div id="bossBarFg"></div>
+         </div>
+        <div id="candle1" class="candleOff"></div>
+        <div id="candle2" class="candleOff"></div>
+        <div id="alter"><p id="alterPopup">[F]</p></div>
+        <div id="chatBox">
+            <h1 id="alterDialogue"></h1>
+        </div>
+        <div id="boss"></div>
+        <div class="vignette-overlay-underground"></div>
+    </div>
+    <div id="cutscene"></div>
+    <script src="js/content.js"></script>
+</body>
+</html>

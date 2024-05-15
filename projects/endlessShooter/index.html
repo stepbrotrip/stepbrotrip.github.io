@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <title>Mushroom Survivor</title>
+    <link rel="stylesheet" href="css/title.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+      </style>
+</head>
+<body>
+    <div id="tutorialPopup">
+        <button id="exitPopupBtn" onclick="exitPopup()">X</button>
+        <h1 id="popupText">W A S D to move <br>Left Mouse Button to shoot <br> Space - Dash <br> E - Special Attack <br></h1> 
+        <h1 id="reload">you might also wanna know <br> it's R to reload</h1>
+    </div>
+
+    <button id="mainMenuBtn" onclick="changePage()">Exit</button>
+    <div id="decor2" class="human"></div>
+
+    <button id="info" onclick="tutorialPopup()">How to play</button>
+    <button id="playButton" onclick="play()">Play</button>
+    <script src="js/title.js"></script>
+</body>
+</html>
