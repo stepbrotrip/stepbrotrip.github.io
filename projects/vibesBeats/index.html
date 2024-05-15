@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibes Beats</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+      </style>
+
+</head>
+
+
+<body>
+    <audio controls id="bgMusicDis">
+        <source src="soundFiles/bg.mp3" id="bgMusic">
+      Your browser does not support the audio element.
+    </audio>
+    <div id="musicPopup">
+        <div id="musicPopupFg">
+            <h1 id="musicQuestion">Would you like to enable music?</h1>
+            <button id="musicNo" onclick="musicNo()">No</button>
+            <button id="musicYes" onclick="musicYes()">Yes</button>
+        </div>
+    </div>
+
+    <button id="mainMenuBtn" onclick="changePage(`../../html/projects.html`)">Exit</button>
+
+    <div id="title">
+        <img src="images/v2.png" id="v">
+        <img src="images/i2.png" id="i">
+        <img src="images/b2.png" id="b1">
+        <img src="images/e.png" id="e1">
+        <img src="images/s.png" id="s1">
+        <img src="images/space.png">
+        <img src="images/b2.png" id="b2">
+        <img src="images/e.png" id="e2">
+        <img src="images/a.png" id="a">
+        <img src="images/t2.png" id="t">
+        <img src="images/s.png" id="s2">
+    </div>
+
+    <div id="buttonDivBg">
+        <div id="buttonDivFg">
+            <img id="selector" src="images/selector.png">
+            <div class="button-group">
+                <a id="startBtn" class="text">Play</a>
+                <a id="settingsBtn" class="text">Settings</a>
+                <a id="infoBtn" class="text">Credits</a>
+            </div>
+        </div>
+    </div>
+
+    <img src="images/laserPigeon.png" id="lasarP"><div id="shadow1"></div>
+    <img src="images/lilP.png" id="lilP"><div id="shadow2"></div> 
+    <img src="images/stingy.png" id="stingy"><div id="shadow3"></div>
+    <img src="images/smokey.png" id="smokey"><div id="shadow4"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

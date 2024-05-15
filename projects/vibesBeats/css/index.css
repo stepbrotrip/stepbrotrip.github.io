@@ -1,0 +1,248 @@
+body {
+    position:relative;
+    background-image:url("../images/bg1.png");
+    background-size:cover;
+    overflow:hidden;
+}
+
+#title {
+    padding:none;
+    position:absolute;
+    top:9vh;
+    left:5%;
+
+}   
+
+#board {
+    position:relative;
+
+}
+
+#btnTxt {
+    font-size:5vw;
+    font-family:"Silkscreen";
+}
+
+#start {
+    width:25vw;
+    height:40vh;
+    background-image:url("../images/button.png");
+    background-size:Cover;
+    border:none;
+    position:absolute;
+    top:250px;
+    left:525px;
+
+}
+
+#start:hover {
+    transform:translateY(-4px);
+}
+
+#start:active {
+    transform: translateY(8px);
+
+}
+
+#lilP {
+    position:absolute;
+    right:175px;
+    top:225px;
+    transform: scaleX(-1);
+    transform: rotate(-25deg);
+    z-index:5;
+}
+
+#lasarP {
+    position:absolute;
+    left:200px;
+    top:500px;
+    transform:rotate(-25deg);
+    z-index:5;
+}
+
+#smokey {
+    position:absolute;
+    right:175px;
+    top:500px;
+    transform:rotate(25deg);
+    z-index:5;
+}
+
+#stingy {
+    position:absolute;
+    left:175px;
+    top:225px;
+    transform: rotate(25deg);
+    z-index:5;
+}
+
+#shadow1 {
+    position: absolute;
+    right:140px;
+    top:375px;
+    transform: rotate(-25deg);
+}
+
+#shadow2 {
+    position:absolute;
+    left:200px;
+    top:650px;
+    transform: rotate(-25deg);
+}
+
+#shadow3 {
+    position:absolute;
+    right:195px;
+    top:630px;
+    transform: rotate(25deg);
+}
+
+#shadow4 {
+    position:absolute;
+    left:140px;
+    top:380px;
+    transform: rotate(25deg);
+}
+
+#shadow1, #shadow2, #shadow3, #shadow4 {
+    width:192px;
+    height:50px;
+    background-color:#111111;
+    border-radius:100%;
+    z-index:2;
+}
+
+
+#v, #i, #b1, #e1, #apos, #s1, #b2, #e2, #a, #t, #s2 {
+    top:0px;
+}
+
+#buttonDivBg {
+    width:36vw;
+    height:45vh;
+    background-color: #28282e;
+    position:absolute;
+    top:300px;
+    left:450px;
+    border:10px #111 solid;
+}
+
+#buttonDivFg {
+    width:34vw;
+    height:43vh;
+    background-color: #28282e;
+    display: flex;
+    align-items: center;
+
+}
+
+#selector {
+    margin-right: 3vw;
+    margin-left:3vw;
+    transform: translateY(0px);
+    width:80px;
+    height:80px;
+    /*-85 0 85*/
+}   
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    font-family: "Silkscreen";
+    font-size: 4vw;
+    margin-bottom: 10px; /* Adjust the spacing between buttons */
+    color:#fff6e0;
+    text-shadow: 3px 3px #111111;
+
+}
+
+#musicQuestion {
+    font-family: "Silkscreen";
+    font-size:3vw;
+    color:#111;
+    text-align: center;
+    margin:4vw;
+}
+
+#musicPopupFg {
+    position:absolute;
+    background-color:#fff6e0;
+    width:42vw;
+    height:52vh;
+    z-index:22;
+    border-radius:15px;
+    z-index: 20;
+    top:250px;
+    left:400px;
+    border:#111 15px solid;
+    border-radius:15px;
+}
+
+#musicNo {
+    position:absolute;
+    top:55%;
+    left:55%;
+    width:12vw;
+    height: 12vh;
+    border-radius:15px;
+    background-color:#c681e3;
+    font-family:"Silkscreen";
+    font-size:25px;
+    color:#111111;
+    border:none;
+
+}
+
+#musicYes {
+    position:absolute;
+    top:55%;
+    left:15%;
+    width:12vw;
+    height: 12vh;
+    border-radius:15px;
+    background-color:#64edb4;
+    font-family:"Silkscreen";
+    font-size:25px;
+    color:#111111;
+    border:none;
+
+}
+
+#musicYes:hover, #musicNo:hover {
+    transform: translateY(4px);
+}
+#musicYes:active, #musicNo:active {
+    transform: translateY(8px);
+}
+
+#bgMusicDis {
+    display:none;
+}
+
+
+#mainMenuBtn {
+    position:fixed;
+    bottom:5%;
+    left:2%;
+    width:7vw;
+    height: 7vh;
+    background-image:url("../../../images/mainMenuBtn.png");
+    background-size:100% 100%;
+    background-position:0 0;
+    border-radius:15px;
+    font-family:"Silkscreen";
+    font-size:25px;
+    text-shadow: 1px 0px 0 #111;
+    color:#333333;
+    border:none;
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#mainMenuBtn:hover {
+    transform:translateY(10px);
+}

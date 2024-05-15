@@ -1,0 +1,311 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    position:relative;
+    background-color:#333333;
+    height:100%;
+    background-image:url("../images/bg1.png");
+    background-size:cover;
+
+    overflow:hidden;
+}
+
+html {
+    height:100vh;
+}
+
+#gameArea {
+    display:flex;
+    z-index:-5;
+    justify-content: center;
+    height:100%;
+    width:50vw;
+
+}
+
+.emptyArrow {
+    position:absolute;
+    bottom:2vw;
+    z-index:1;
+}
+
+#arrow0 {left:33vw;}
+#arrow1 {left:41vw;}
+#arrow2 {left:49vw;}
+#arrow3{left:57vw;}
+
+#testImg {
+    position:absolute;
+    height:100px;
+    width:105px;
+    left:490px;
+    z-index:2;
+}
+
+#popup {
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:7vh;
+    font-family:"Silkscreen";
+    color:white;
+    background-color:#333333ba;
+    padding:50px;
+    text-shadow: 3px 3px #111111;
+
+}
+
+#scoreBg {
+    background-color:#333333;
+    width:15vw;
+    height:9vh;
+
+    position:absolute;
+    top:10%;
+    right:42px;
+    border-radius:15px;
+    border:5px solid #111111;
+}
+
+#scoreLblBg {
+    background-color: #87599c;
+    width:7vw;
+    height:4vh;
+
+    position:absolute;
+    border-radius:10px;
+    border:#111111 5px solid;
+    top:-35px;
+    left:5px;
+}
+
+#scoreLbl {
+    background-color: #c681e3;
+    width:7vw;
+    height:3.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#scoreLblTxt {
+    font-size:3vh;
+    position: absolute;
+}
+
+#scoreFg {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+    background-color:#555555;
+    width:15vw;
+    height:8vh;
+
+    position:absolute;
+    border-radius:15px;
+}
+
+#scoreTag {
+    color:#ffffff;
+    text-shadow: 3px 3px #111111;
+
+
+    font-family:"Silkscreen";
+    font-size:40px;
+}
+
+#enemy {
+    width:20vw;
+    height:40vh;
+
+    position:absolute;
+    top:50%;
+    right:7%;
+}
+
+#enemyBoxBg {
+    width:23vw;
+    height:22vh;
+    background-color: #777777c3;
+    position:absolute;
+    top:25%;
+    right:7%;
+}
+
+#enemyTxtBox {
+    width:21vw;
+    height:19vh;
+    position:absolute;
+    
+    display:flex;
+    justify-content:left;
+    align-items:flex-start;
+}
+
+#enemyTxt {
+    font-size:2vh;
+    font-family:"Silkscreen";
+    padding:1vw;
+}
+
+#loseBg {
+    background-color:#333333ba;
+    width:18vw;
+    height:13vh;
+    position:absolute;
+    bottom:10%;
+    left:5%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    opacity:0%;
+}
+
+#loseText {
+    font-size:4vh;
+    position:absolute;
+    color:white;
+    font-family:"Silkscreen";
+    opacity:0%;
+}
+
+#comboBg {
+    background-color:#333333;
+    width:15vw;
+    height:9vh;
+
+    position:absolute;
+    top:10%;
+    left:42px;
+    border-radius:15px;
+    border:5px solid #111111;
+}
+
+#comboLblBg {
+    background-color: #4aba8c;
+    width:7vw;
+    height:4vh;
+
+    position:absolute;
+    border-radius:10px;
+    border:#111111 5px solid;
+    top:-35px;
+    left:5px;
+}
+
+#comboLbl {
+    background-color: #64edb4;
+    width:7vw;
+    height:3.2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#comboLblTxt {
+    font-size:3vh;
+    position: absolute;
+}
+
+#comboFg {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+    background-color:#555555;
+    width:15vw;
+    height:8vh;
+
+    position:absolute;
+    border-radius:15px;
+}
+
+#comboTag {
+    color:#ffffff;
+    text-shadow: 3px 3px #111111;
+
+
+    font-family:"Silkscreen";
+    font-size:5vh;
+}
+
+#pauseMenuBg {
+    background-color: #222222;
+    width:27.5vw;
+    height:62vh;
+    position:absolute;
+    top:15%;
+    border-radius:15px;
+    border:10px solid #111;
+    display:none;
+
+}
+
+#pauseMenuFg {
+    background-color: #333333;
+    width:27.5vw;
+    height:60vh;
+    position:absolute;
+
+    display:flex;
+    justify-content: center;
+    
+}
+
+#pauseLbl {
+    position:absolute;
+    font-size:8vh;
+    font-family:"silkscreen";
+    color:white;
+    top:-10px;
+
+}
+
+#btnTxt {
+    font-size:3vh;
+    font-family:"Silkscreen";
+}
+
+#quit {
+    width:13vw;
+    height:13vh;
+    background-image:url("../images/buttonBlue.png");
+    background-size:100% 100%;
+    border:none;
+    position:absolute;
+    top:300px;
+
+}
+
+#quit:hover {
+    transform: translateY(4px);
+
+}
+
+#quit:active {
+    transform: translateY(8px);
+}
+
+#mainMenu {
+    width:13vw;
+    height:13vh;
+    background-image:url("../images/buttonRed.png");
+    background-size:100% 100%;
+    border:none;
+    position:absolute;
+    top:150px;
+}
+
+#mainMenu:hover {
+    transform: translateY(4px);
+
+}
+
+#mainMenu:active {
+    transform: translateY(8px);
+}

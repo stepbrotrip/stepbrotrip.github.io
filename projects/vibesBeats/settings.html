@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibes Beats | Settings</title>
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+      </style>
+</head>
+<body>
+    <div id="applyPopup">
+        <div id="popup">
+            <h1 id="popupTxt">Do you want to apply changes?</h1>
+            <button id="yes" onclick="yah()">Yes</button>
+            <button id="nah" onclick="nah()">Nah</button>
+        </div>
+    </div>
+
+    <div id="settingsBar">
+        <button id="audioLbl" class="lblBtn mar-1510">Audio</button>
+        <button id="controlsLbl" class="lblBtn mar-1510">Controls</button>
+        <button onclick="exit()" id="exit" class="lblBtn">Exit</button>
+        <button onclick="updateSettings()" id="apply" class="lblBtn">Apply</button>
+
+        <div id="audio">
+            <div id="muteDiv">
+                <input type="checkbox" name="mute" id="mute">
+                <label id="muteLbl" for="mute" class="text">Mute</label>
+            </div>
+
+            <div id="seVolumeDiv">
+                <label for="seVolume" id="seVLbl" class="text">Main Volume</label>
+                <input type="range" min="0" max="100" value="100" name="seVolume" id="seVolume">
+            </div>
+
+            <div id="musicVolDiv">
+                <label for="musicVol" id="musicVLbl" class="text">Music Volume</label>
+                <input type="range" min="0" max="100" value="75" name="musicVol" id="musicVol" step="1">
+            </div>
+        </div>
+
+        <div id="controls">
+
+        </div>
+
+    </div>
+
+    <script src="js/settings.js"></script>
+</body>
+</html>

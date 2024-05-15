@@ -1,0 +1,254 @@
+body {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    position:relative;
+    background-size:cover;
+    background-image:url("../images/bg1.png");
+    overflow:hidden;
+}
+
+#text {
+    position:absolute;
+    top:2%;
+    left:50%;
+    transform:translateX(-50%);
+
+}
+
+@keyframes fadeIn{
+from{opacity:0%;}
+to{opacity:100%;}
+}
+
+#gradeBg {
+    background-color:#e4d1d1;
+    width:14vw;
+    height:24vh;
+    border-radius:15px;
+    position:absolute;
+    right:13%;
+    top:5%;
+
+    z-index:1;
+    border:5px #111 solid;
+}
+#gradeFg {
+    background-color:#f0f0f0;
+    width:14vw;
+    height:23vh;
+    border-radius:15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#grade {
+    height:20vh;
+    width:10vw;
+    z-index:3;
+    position:absolute;
+    
+}
+
+
+
+#fade{
+    font-size: 20vh;
+    animation: fadeIn 5s ease-in 0s 1;
+    font-family:"Silkscreen";
+    color:#fff;
+    text-shadow: 3px 3px #111111;
+    position:absolute;
+    top:350px;
+
+    
+}
+
+#retry {
+    width:17vw;
+    height:14vh;
+    border:none;
+    background-image:url("../images/loseBtn.png");
+    background-size:100% 100%;
+
+    position:absolute;
+    top:60%;
+    right:11%;
+}
+
+#retry:hover {
+    transform:translateY(4px);
+}
+#retry:active {
+    transform:translateY(8px);
+}
+
+
+#btnTxt {
+    font-size:5vh;
+    font-family:"Silkscreen";
+}
+
+#finePrint {
+    font-size:1vh;
+    position:fixed;
+    bottom:10%;
+    right:1%;
+    color:#222;
+    
+}
+
+
+#infoBox {
+    background-color: #222222;
+    width:55vw;
+    height:56vh;
+
+    position:fixed;
+    top:30%;
+    left:23%;
+
+    border:#111111 10px solid;
+    border-radius: 15px;
+    z-index:-2;
+}
+
+#infoBoxFg {
+    width:55vw;
+    height:54vh;
+    background-color: #333333;
+    z-index:-1;
+}
+
+#scoreBg {
+    background-color:#e4d1d1;
+    width:24vw;
+    height:12vh;
+
+    position:absolute;
+    top:10%;
+    left:5%;
+    border-radius:15px;
+    border:5px solid #111111;
+}
+
+#scoreLblBg {
+    background-color: #87599c;
+    width:10vw;
+    height:4vh;
+
+    position:absolute;
+    border-radius:10px;
+    border:#111111 5px solid;
+    top:-35px;
+    left:25px;
+}
+
+#scoreLbl {
+    background-color: #c681e3;
+    width:10vw;
+    height:3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#scoreLblTxt {
+    font-size:3vh;
+    position: absolute;
+    font-family:"Silkscreen";
+}
+
+#scoreFg {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+    background-color:#f0f0f0;
+    width:24vw;
+    height:11vh;
+
+    position:absolute;
+    border-radius:15px;
+}
+
+#scoreTag {
+    color:#000000;
+    text-shadow: 3px 3px #111111;
+
+    font-family:"Silkscreen";
+    font-size:8vh;
+}
+
+#comboBg {
+    background-color:#e4d1d1;
+    width:24vw;
+    height:12vh;
+
+    position:absolute;
+    top:50%;
+    left:42px;
+    border-radius:15px;
+    border:5px solid #111111;
+}
+
+#comboLblBg {
+    background-color: #4aba8c;
+    width:10vw;
+    height:4vh;
+
+    position:absolute;
+    border-radius:10px;
+    border:#111111 5px solid;
+    top:-35px;
+    left:5px;
+    
+}
+
+#comboLbl {
+    background-color: #64edb4;
+    width:10vw;
+    height:3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#comboLblTxt {
+    font-size:3vh;
+    position: absolute;
+    font-family:"Silkscreen";
+}
+
+#comboFg {
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+    background-color:#f0f0f0;
+    width:24vw;
+    height:11vh;
+
+    position:absolute;
+    border-radius:15px;
+}
+
+#comboTag {
+    color:#000000;
+    text-shadow: 3px 3px #111111;
+
+
+    font-family:"Silkscreen";
+    font-size:8vh;
+}
+
+#y, #o, #u1, #s, #u2, #c, #k {
+    z-index:5;
+    height:100px;
+    width:100px;
+    margin:-10px;
+}

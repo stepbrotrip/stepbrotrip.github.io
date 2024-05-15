@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibes Beats</title>
+    <link rel="stylesheet" href="css/page2.css">
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen&display=swap');
+    </style>
+</head>
+
+<body>
+    <div id="pauseMenuBg">
+        <div id="pauseMenuFg">
+            <h1 id="pauseLbl">Paused</h1>
+            <button id="mainMenu" onclick="mainMenu()"><h1 id="btnTxt">Main Menu</h1></button>
+            <button id="quit" onclick="quit()"><h1 id="btnTxt">Give Up?</h1></button>
+        </div>
+    </div>
+
+
+    <div id="scoreBg">
+        <div id="scoreLblBg">
+            <div id="scoreLbl">
+                <h1 id="scoreLblTxt">Score</h1>
+            </div>
+        </div>
+        <div id="scoreFg">
+            <h1 id="scoreTag">0</h1>
+        </div>
+    </div>
+
+    <div id="comboBg">
+        <div id="comboLblBg">
+            <div id="comboLbl">
+                <h1 id="comboLblTxt">Combo</h1>
+            </div>
+        </div>
+        <div id="comboFg">
+            <h1 id="comboTag">0</h1>
+        </div>
+    </div>
+
+    <div id="loseBg">
+        <h1 id="loseText">You Suck</h1>
+    </div>
+
+    <div id="gameArea">
+        <div id="holder"></div>
+        <img src="images/empty0.png" id="arrow0" class="emptyArrow">
+        <img src="images/empty1.png" id="arrow1" class="emptyArrow">
+        <img src="images/empty2.png" id="arrow2" class="emptyArrow">
+        <img src="images/empty3.png" id="arrow3" class="emptyArrow">
+    </div>
+
+    <img src="images/laserPigeon.png" id="enemy">
+    <div id="enemyBoxBg"><div id="enemyTxtBox"><h1 id="enemyTxt">I am lazar pigeon, PEW PEW...</h1></div></div>
+
+    <script src="js/engine.js"></script>
+</body>
+</html>
