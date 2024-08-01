@@ -1,5 +1,4 @@
-
-
+@media (min-width : 1200px){
 html,
 body {
   margin: 0;
@@ -22,7 +21,7 @@ body:before {
     top:5%;
     left:5%;
     width:100vw;
-    height:300px;
+    height:50vh;
 }
 
 #projects {
@@ -48,14 +47,14 @@ body:before {
 
 .headerBtn {
     width:10%;
-    height:60px;
+    height:8vh;
     background:none;
     border:none;
     font-family:"Silkscreen";
-    font-size:17px;
+    font-size:1vw;
     color: #DDDDDD;
     text-shadow:3px 3px  2px #111;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
     background-color:#333;
     border-radius:15px;
 
@@ -70,7 +69,7 @@ body:before {
 
 #intro {
     font-family:'Silkscreen';
-    font-size:20px;
+    font-size:1.25vw;
     color:#fff;
 
     text-align:center;
@@ -83,9 +82,9 @@ body:before {
 .octopus {
     background-image: url(../images/octopus.png);
     background-position:0 0;
-    background-size:100% 205px;
+    background-size:100% 100%;
     width:15%;
-    height:205px;
+    height:25vh;
     position:fixed;
     left:1%;
     top:1%;
@@ -134,4 +133,146 @@ body:before {
     top:25%;
     right:17.5%;
 
+}
+}
+
+@media (max-width:1170px){
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+          background: transparent;
+        }
+        body:before {
+          content: "";
+          position: fixed;
+          z-index: -1;
+          inset: 0 0 0 0;
+          background-image:url(../images/wallpaper.png);
+          background-size:cover;
+          background-position:0 0;
+          background-repeat:no-repeat;
+        }
+        
+        #headerbar {
+            position: fixed;
+            top:5%;
+            left:5%;
+            width:100vw;
+            height:50vh;
+        }
+        
+        #projects {
+            position:absolute;
+            left:7%;
+        
+        }
+        
+        #gallery {
+            position:absolute;
+            left:26%;
+        }
+        
+        #contact {
+            position:absolute;
+            left:45%;
+        }
+        
+        #extras {
+            position:absolute;
+            left:64%;
+        }
+        
+        .headerBtn {
+            width:18%;
+            height:8vh;
+            background:none;
+            border:none;
+            font-family:"Silkscreen";
+            font-size:2.5vw;
+            color: #DDDDDD;
+            text-shadow:3px 3px  2px #111;
+            transition: transform 0.3s ease;
+            background-color:#333;
+            border-radius:15px;
+        
+        }
+        
+        
+        .headerBtn:hover {
+            transform: translateY(-5px);
+            background-color: rgba(87, 89, 187, 0.6);
+            border-radius:15px;
+        }
+        
+        #intro {
+            font-family:'Silkscreen';
+            font-size:2.75vw;
+            color:#fff;
+        
+            text-align:center;
+            width:40%;
+            position:fixed;
+            top:25%;
+            left:50%;
+            transform:translateX(-50%);
+        }
+        
+        .octopus {
+            background-image: url(../images/octopus.png);
+            background-position:0 0;
+            background-size:100% 100%;
+            width:30%;
+            height:25vh;
+            position:fixed;
+            left:1%;
+            bottom:1%;
+            z-index:-1;
+            transition: transform 0.3s ease; 
+            will-change: transform;
+            user-select: none;
+        }
+        
+        .octopus.octoTimeFinish {
+            background-image: url(../images/octopus15.png);
+        }
+        
+        .octopus.octoTime {
+            animation: octoTime 2s infinite steps(1);
+            animation-delay: 0s;
+            animation-fill-mode: backwards;
+        }
+        
+        @keyframes octoTime {
+            0% {background-image:url(../images/octoTime/octopus1.png);}
+            6% {background-image:url(../images/octoTime/octopus1.png);}
+            12% {background-image:url(../images/octoTime/octopus2.png);}
+            18% {background-image:url(../images/octoTime/octopus3.png);}
+            24% {background-image:url(../images/octoTime/octopus4.png);}
+            30% {background-image:url(../images/octoTime/octopus5.png);}
+            36% {background-image:url(../images/octoTime/octopus6.png);}
+            42% {background-image:url(../images/octoTime/octopus7.png);}
+            48% {background-image:url(../images/octoTime/octopus8.png);}
+            54% {background-image:url(../images/octoTime/octopus9.png);}
+            60% {background-image:url(../images/octoTime/octopus10.png);}
+            66% {background-image:url(../images/octoTime/octopus11.png);}
+            72% {background-image:url(../images/octoTime/octopus12.png);}
+            78% {background-image:url(../images/octoTime/octopus13.png);}
+            84% {background-image:url(../images/octoTime/octopus14.png);}
+            90% {background-image:url(../images/octopus15.png);}
+            100% {background-image:url(../images/octopus15.png);}
+        }
+        
+        #scroll {
+            width:70vw;
+            height:60vh;
+            background-image:url(../images/scroll.png);
+            background-size:100% 100%;
+            background-position:0 0;
+            position:fixed;
+            top:25%;
+            left:50%;
+            transform:translateX(-50%);
+        
+        }
 }
