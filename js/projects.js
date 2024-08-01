@@ -87,6 +87,7 @@ async function spyglassStart(){
         document.getElementById("spyglassOverlay").style.display = "block";
         document.getElementById("island").style.display = "block";
         document.getElementById("projectList").style.display = "block";
+        document.getElementById("homeBtn").style.display = "none";
         addClass("spyglassOverlay", "spyglassStart");
         await sleep(1000);
         removeClass("spyglassOverlay", "spyglassStart");
@@ -109,6 +110,7 @@ async function spyglassExit() {
         document.getElementById("projectList").style.display = "none";
         document.getElementById("island").style.display = "none";
         document.getElementById("spyglassOverlay").style.display = "none";
+        document.getElementById("homeBtn").style.display = "block";
         document.body.classList.remove("spyglassBackground");
         isInSpyglass = false;
     }
