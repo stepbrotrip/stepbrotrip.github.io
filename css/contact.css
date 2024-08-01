@@ -1,18 +1,19 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-}
 
-body:before {
-  content: "";
-  position: fixed;
-  z-index: -1;
-  inset: 0 0 0 0;
-  background-size: cover;
-  background: radial-gradient(#000, #222); /* Adjust color stops to make it darker */
-  background-position: 60% 0;
+body {
+  width:100vw;
+  height:100vh;
+  background-color: #fff;
+  background-image: url("../images/credits.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  overflow: hidden;
+  margin: 0;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:20;
 }
 
 #contact {
