@@ -64,14 +64,18 @@ p {
     width:20vw;
     height:75vh;
     position:fixed;
-    top:12%;
-    right:35%;
+    top:3%;
+    left:0%;
     background-color:#e3a084;
     will-change:transform;
     transition: transform 0.6s ease;
     border-radius:5px 0 0 5px;
     border:#333 2px solid;
     z-index:-1;
+}
+
+#mineSettings {
+    display:none;
 }
 
 .openSettings {
@@ -431,34 +435,39 @@ input[type="range"]::-ms-fill-upper {
         color:#333;
         font-size:16px;
     }
-    
+
     .classicGameBoard {
-        width:20rem;
-        height:20rem;
-        background-size:100% 100%;
-        position:fixed;
-        top:50%;
-        transform:translate(-50%,-50%);
-        left:50%;
+        width: 20rem;
+        height: 20rem;
+        background-size: 100% 100%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         border-radius: 5px;
         background-color: #f2cb9b;
-        border:#333 2px solid;
-        z-index:50;
+        border: #333 2px solid;
+
     }
     
     .classicGameSettings {
-        width:18rem;
-        height:5rem;
-        position:fixed;
-        top:24%;
-        left:16%;
-        background-color:#e3a084;
-        will-change:transform;
+        width: 18rem;
+        height: 5rem;
+        position: fixed;
+        top: 0;
+        left: 5%;
+        background-color: #e3a084;
+        will-change: transform;
         transition: transform 0.6s ease;
-        border-radius:5px 0 0 5px;
-        border:#333 2px solid;
+        border-radius: 5px 0 0 5px;
+        border: #333 2px solid;
         z-index:-1;
     }
+
+    #mineSettings {
+        display:none;
+    }
+    
     
     .openSettings {
         transform:translateY(-91%);
@@ -702,7 +711,7 @@ input[type="range"]::-ms-fill-upper {
     #chooseMines {
         position:fixed;
         top:14%;
-        left:2%;
+        left:20%;
         background-color:#60c160;
         display:block;
     }
@@ -710,7 +719,7 @@ input[type="range"]::-ms-fill-upper {
     #homeBtn {
         position:absolute;
         top:14%;
-        left:20%;
+        left:2%;
         z-index:1;
         display:block;
     }

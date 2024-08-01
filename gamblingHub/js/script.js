@@ -41,18 +41,20 @@ function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1)) + Math.ceil(min);
 }
 
-function openMines(){
+async function openMines(){
+    document.getElementById("mineSettings").style.display = "block";
+    await sleep(150);    
     removeClass("mineSettings", "hideSettings");
     addClass("mineSettings", "openSettings");
-    document.getElementById("homeBtn").style.display = "none";
     document.getElementById("chooseMines").style.display = "none";
 }
 
-function hideSettings(){
+async function hideSettings(){
     removeClass("mineSettings", "openSettings");
     addClass("mineSettings", "hideSettings");
-    document.getElementById("homeBtn").style.display = "block";
+    await sleep(500);
     document.getElementById("chooseMines").style.display = "block";
+    document.getElementById("mineSettings").style.display = "none";
 }
 
 let alreadyTalking = false;

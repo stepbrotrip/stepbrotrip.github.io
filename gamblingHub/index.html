@@ -20,19 +20,20 @@
         <button id="chooseMines" class="mainStartButton" onclick="openMines()">Open Mines</button>
         <div id="mineBoard" class="classicGameBoard">
             <div id="tileGrid">
-                
+                    
             </div>
-        </div>
-        <div id="mineSettings" class="classicGameSettings">
-            <button id="hideMineSettings" class="hideSettingsBtn" onclick="hideSettings()">></button>
-            <label for="amountOfMines" id="minesLabel">Mines: </label>
-            <input id="amountOfMines" name="amountOfMines" type="range" min="1" max="24" step="1" value="1">
-            <input id="minesNumber" name="minesNumber" type="number" min="1" max="24" step="1">
-            <label for="betAmount" id="betLabel">Bet: </label>
-            <input id="betAmount" name="betAmount" type="range" min="0.1" step="1" max="1000" value="0.5">
-            <input id="betNumber" name="betNumber" type="number" min="0.1" step="0.1" value="0.5">
-            <button id="startMinesButton" class="mainStartButton" onclick="startMines()">Start</button>
-            <button id="cashOutButton" class="mainStartButton" onclick="cashOut()">Cash Out</button>
+
+            <div id="mineSettings" class="classicGameSettings">
+                <button id="hideMineSettings" class="hideSettingsBtn" onclick="hideSettings()">></button>
+                <label for="amountOfMines" id="minesLabel">Mines: </label>
+                <input id="amountOfMines" name="amountOfMines" type="range" min="1" max="24" step="1" value="1">
+                <input id="minesNumber" name="minesNumber" type="number" min="1" max="24" step="1">
+                <label for="betAmount" id="betLabel">Bet: </label>
+                <input id="betAmount" name="betAmount" type="range" min="0.1" step="1" max="1000" value="0.5">
+                <input id="betNumber" name="betNumber" type="number" min="0.1" step="0.1" value="0.5">
+                <button id="startMinesButton" class="mainStartButton" onclick="startMines()">Start</button>
+                <button id="cashOutButton" class="mainStartButton" onclick="cashOut()">Cash Out</button>
+            </div>
         </div>
         <div id="caseBoard">
 
