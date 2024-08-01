@@ -438,8 +438,8 @@ input[type="range"]::-ms-fill-upper {
         background-size:100% 100%;
         position:fixed;
         top:50%;
-        transform:translateY(-50%);
-        right:5%;
+        transform:translate(-50%,-50%);
+        left:50%;
         border-radius: 5px;
         background-color: #f2cb9b;
         border:#333 2px solid;
@@ -447,11 +447,11 @@ input[type="range"]::-ms-fill-upper {
     }
     
     .classicGameSettings {
-        width:20vw;
-        height:18rem;
+        width:18rem;
+        height:5rem;
         position:fixed;
-        top:27%;
-        left:21%;
+        top:24%;
+        left:16%;
         background-color:#e3a084;
         will-change:transform;
         transition: transform 0.6s ease;
@@ -461,11 +461,11 @@ input[type="range"]::-ms-fill-upper {
     }
     
     .openSettings {
-        transform:translateX(-97%);
+        transform:translateY(-91%);
     }
     
     .hideSettings {
-        transform:translateX(0%);
+        transform:translateY(0%);
     }
     
     .hideSettingsBtn {
@@ -590,8 +590,8 @@ input[type="range"]::-ms-fill-upper {
     
     #betLabel {
         position:absolute;
-        left:5%;
-        top:15%;
+        left:35%;
+        top:30%;
     }
     
     #amountOfMines {
@@ -609,8 +609,8 @@ input[type="range"]::-ms-fill-upper {
     
     #betNumber {
         position: absolute;
-        left: 5%;
-        top: 20%;
+        left:35%;
+        top: 50%;
         width: 5rem; /* Adjust the width as needed */
         height: 1.5rem; /* Adjust the height as needed */
         padding: 0.25rem; /* Add padding as needed */
@@ -624,7 +624,7 @@ input[type="range"]::-ms-fill-upper {
     #minesNumber {
         position: absolute;
         left: 5%;
-        top: 35%;
+        top: 50%;
         width: 5rem; /* Adjust the width as needed */
         height: 1.5rem; /* Adjust the height as needed */
         padding: 0.25rem; /* Add padding as needed */
@@ -646,19 +646,24 @@ input[type="range"]::-ms-fill-upper {
     
     #startMinesButton {
         position:absolute;
-        left:15%;
-        top:50%;
+        right:15%;
+        top:10%;
+        width:3rem;
+        height:1.75rem;
+        
     }
     
     #cashOutButton {
         position:absolute;
-        top:70%;
-        left:15%;
+        top:50%;
+        right:15%;
+        width:3rem;
+        height:2.25rem;
     }
     
     .tile {
-        width: 8vw;
-        height: 12vh;
+        width: 3rem;
+        height: 3rem;
         background-image:url("../images/blankTile.png");
         background-size:100% 100%;
     }
@@ -691,6 +696,7 @@ input[type="range"]::-ms-fill-upper {
         position:fixed;
         top:14%;
         left:17%;
+        display:none;
     }
     
     #chooseMines {
@@ -698,13 +704,15 @@ input[type="range"]::-ms-fill-upper {
         top:14%;
         left:2%;
         background-color:#60c160;
+        display:block;
     }
     
     #homeBtn {
         position:absolute;
         top:14%;
-        left:32%;
+        left:20%;
         z-index:1;
+        display:block;
     }
     
     /*input*/

@@ -44,12 +44,15 @@ function getRandomNumber(min, max) {
 function openMines(){
     removeClass("mineSettings", "hideSettings");
     addClass("mineSettings", "openSettings");
-
+    document.getElementById("homeBtn").style.display = "none";
+    document.getElementById("chooseMines").style.display = "none";
 }
 
 function hideSettings(){
     removeClass("mineSettings", "openSettings");
     addClass("mineSettings", "hideSettings");
+    document.getElementById("homeBtn").style.display = "block";
+    document.getElementById("chooseMines").style.display = "block";
 }
 
 let alreadyTalking = false;
