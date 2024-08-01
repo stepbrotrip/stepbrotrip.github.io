@@ -1,6 +1,5 @@
 
 /*crt effect from https://aleclownes.com/2017/02/01/crt-display.html*/
-
 .vignette-overlay-upstairs {
     position: fixed;
     top: 0;
@@ -188,6 +187,7 @@
 
 
 /* Keep your existing styles for other elements */
+@media (min-width:1171px){
 
 .player {
     position:fixed;
@@ -1118,3 +1118,970 @@
 
 }
 
+}
+
+@media (max-width:1170px){
+  
+.player {
+  position:fixed;
+  top:10px;
+  left:10px;
+  width: 4vw;
+  height: 14vh;
+  background-position: 0 0;
+  background-size: 100% 100%;
+  z-index: 1000;
+  will-change:animation;
+  transition:animation 0.3s ease;
+}
+
+#helicopterCount {
+  font-family:"silkscreen";
+  font-size:25px;
+  color:#fff;
+  position:fixed;
+  top:3%;
+  left:50%;
+  transform:translate(-50%, 0%);
+  user-select: none;
+  z-index:10010;
+  pointer-events: none;
+}
+
+#helicopter {
+  background-image:url(images/helicopter.png);
+  background-position:0 0;
+  background-size:100% 100%;
+  width:10vw;
+  height:20vh;
+  position:fixed;
+  z-index:1003;
+  will-change:transform;
+  transition: transform 0.3s ease;
+  transform:rotate(15deg);
+  display:none;
+}
+
+.idle {
+  background-image:url("images/player/still/still.png");
+}
+
+.walking {
+  background-image:url("images/player/playerWalking/playerWalking1.png");
+  animation: playerWalk .7s infinite;
+}
+
+@keyframes playerWalk {
+  33% {background-image: url('images/player/playerWalking/playerWalking1.png');}
+  66% {background-image: url('images/player/playerWalking/playerWalking2.png');}
+  100% {background-image: url('images/player/playerWalking/playerWalking3.png');}
+}
+
+.gun {
+  position:absolute;
+  top:50%;
+  left:40%;
+  width:3.5vw;
+  height:2vh;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-image:url("images/gun.png");
+  background-repeat:no-repeat;
+  transform-origin: top left;
+  z-index:1001;
+}
+
+.bullet {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:1.5vw;
+  height:1vh;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-image:url("images/bullet.png");
+  background-repeat: no-repeat;
+  z-index:10000000000;
+}
+
+.enemyWalker {
+  background-image:url("images/enemy/walking/walker1.png");
+  position:fixed;
+  width:5vw;
+  height:16vh;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+}
+
+.walkerWalking {
+  animation:enemyWalk .75s infinite steps(1);
+}
+
+.boulder {
+  background-image:url("images/boulder.png");
+  position:fixed;
+  width:4vw;
+  height:8vh;
+  background-position: 0 0;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+}
+
+.enemyCrawler {
+  background-image:url("images/enemy/crawler/crawler1.png");
+  position:fixed;
+  width:3.75vw;
+  height:7.5vh;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+}
+
+.enemyCrawlerCrawl {
+  animation:enemyCrawl .75s infinite steps(1);
+}
+
+.enemyCrawlerStationary {
+  animation:enemyCrawlerIdle 1s infinite steps(1);
+}
+
+.laserBeam{
+  position:fixed;
+  width:1.5vw;
+  height:4vh;
+  background-position:0 0;
+  background-size:100% 100%;
+  background-image:url("images/laserbeam.png");
+  background-repeat: no-repeat;
+}
+
+@keyframes enemyWalk {
+  0% {background-image:url("images/enemy/walking/walker1.png");}
+  25% {background-image:url("images/enemy/walking/walker2.png");}
+  50% {background-image:url("images/enemy/walking/walker3.png");}
+  100% {background-image:url("images/enemy/walking/walker1.png");}
+}
+
+@keyframes enemyCrawl {
+  0% {background-image:url("images/enemy/crawler/crawler1.png");}
+  50% {background-image:url("images/enemy/crawler/crawler2.png");}
+  100% {background-image:url("images/enemy/crawler/crawler1.png");}
+}
+
+#ladder {
+background-image:url(images/ladder.png);
+background-size:100% 30vh;
+width:5vw;
+height:20vh;
+position:fixed;
+top:0;
+left:46vw;
+}
+
+#ammoCount {
+  font-family:"Silkscreen";
+  font-size:2.5vh;
+  opacity: 100%;
+  position:absolute;
+  top:42%;
+  left:30%;
+}
+
+#hud {
+  user-select: none;
+  pointer-events: none;
+}
+
+#coinHud {
+  background-color:#333;
+  width:16vw;
+  height:10vh;
+  position:fixed;
+  top:5%;
+  left:5%;
+  opacity:95%;
+  border:#111 4px solid;
+  color:#888;
+  user-select:none;
+  z-index:100001;
+  pointer-events: none;
+}
+
+#coinCount {
+  font-family:"Silkscreen";
+  font-size:4vh;
+  opacity:100%;
+  position:absolute;
+  top:15%;
+  left:22%;
+}
+
+#ritualSkullCount {
+font-family:"Silkscreen";
+font-size:4vh;
+opacity:100%;
+position:absolute;
+right:18%;
+top:15%;
+z-index:1000000;
+}
+
+#ritualSkullLogo {
+background-size:100% 100%;
+background-image:url("images/ritualSkull.png");
+width:2vw;
+height:4vh;
+background-repeat:no-repeat;
+background-position:0 0;
+position:absolute;
+right:5%;
+bottom:7%;
+z-index:1000000;
+transform:scaleX(-1);
+}
+
+#coinLogo {
+  background-size:100% 100%;
+  background-image:url("images/coinDrop.png");
+  width:2vw;
+  height:4vh;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  position:absolute;
+  left:5%;
+  top:48%
+}
+
+#hpBarBg {
+  background-color:#111;
+  width:14.5vw;
+  height:3vh;
+  position:absolute;
+  top:5%;
+  left:3.5%;
+}
+
+#hpBarFg {
+  background-color:#e8c170;
+  width:14vw;
+  height:2.5vh;
+  position:absolute;
+  left:5px;
+  top:2px;
+
+}
+
+.reloading{
+  transform-origin: top left;
+  animation:reload .75s linear;
+}
+
+.mushroom {
+  height:15vh;
+  width:5vw;
+  background-position:0 0;
+  background-image:url(images/decor/decor1.png);
+  background-size:100% 100%;
+  z-index:9000;
+
+}
+
+.rocks {
+  width:5vw;
+  height:5vh;
+  background-position:0 0;
+  background-image:url(images/decor/decor2.png);
+  background-size:100% 100%;
+  z-index:9000;
+}
+
+.monument1 {
+  width:10vw;
+  height:25vh;
+  background-position:0 0;
+  background-image:url(images/decor/monument1.png);
+  background-size:100% 100%;
+  z-index:1000;
+}
+
+.monument2 {
+  width:9.25vw;
+  height:20vh;
+  background-position:0 0;
+  background-image:url(images/decor/healingMonument.png);
+  background-size:100% 100%;
+  z-index:9000;
+}
+
+#fountainPopup {
+  position:absolute;
+  top:0px;
+  left:50%;
+  transform:translateX(-50%);
+  
+}
+
+.popup {
+font-family: "Silkscreen";
+font-size:2.5vh;
+color:#fefefe;
+transition: transform 0.3s ease; 
+will-change: transform;
+animation:popupHover 2s linear infinite;
+pointer-events:none;
+user-select: none;
+
+}
+
+#helicopterPopup {
+  position:absolute;
+  top:0px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+#helipad {
+  position:absolute;
+  top:50vh;
+  left:70vw;
+  width:11vw;
+  height:20vh;
+  z-index:2;
+  background-size:100% 100%;
+  background-position:0 0;
+  background-image:url(images/helipad.png);
+}
+
+@keyframes popupHover {
+  0% {top:0px;}
+  50% {top:10px;}
+  100% {top:0px;}
+}
+
+#decor1 {position:fixed;top:25%;left:50%;}
+#decor2 {position:fixed;top:35%;left:10%;}
+#decor3 {position:fixed;top:60%;right:60%;}
+#decor4 {position:fixed;top:45vh;left:50vw;}
+#decor5 {position:fixed;top:85%;right:35%;}
+#decor6 {position:fixed;top:90%;right:20%;}
+#decor7 {position:fixed;top:10%;right:10%;}
+#decor8 {position:fixed;top:20%;right:13%;}
+#decor9 {position:fixed;top:80%;right:17%;}
+#decor10 {position:fixed;top:5%;left:13%;}
+
+@keyframes reload {
+  100% {transform:rotate(360deg);}
+}
+
+#info {
+  position:absolute;
+  background-color: #333;
+  width:14vw;
+  height:10vh;
+  border:4px #111 solid;
+  bottom:5%;
+  z-index:10000000;
+  right:5%;
+  opacity:95%;
+  color:#888;
+  user-select: none;
+}
+
+#ammoLogo {
+  background-image:url("images/bulletLogo.png");
+  background-size:100% 100%;
+  width:1.75vw;
+  height:3.5vh;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  position:absolute;
+  right:10%;
+  bottom:5%;  
+  
+}
+
+.kamehamehaLogo {
+  background-size:100% 100%;
+  background-image:url("images/kameFull.png");
+  width:2vw;
+  height:4vh;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  position:absolute;
+  right:30%;
+  top:10%;
+}
+
+.kamehamehaEmpty {
+  background-size:100% 100%;
+  background-image:url("images/kameEmpty.png");
+  width:2vw;
+  height:4vh;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  position:absolute;
+  right:30%;
+  top:10%;
+}
+
+.kamehameha1 {
+position:fixed;
+top:0px;
+left:0px;
+width:8vw;
+height:2vh;
+background-position:0 0;
+background-size:100% 100%;
+background-image:url("images/kamehameha1.png");
+background-repeat: no-repeat;
+z-index:10000000000;
+}
+
+.kamehameha2 {
+position:fixed;
+top:0px;
+left:0px;
+width:8vw;
+height:2vh;
+background-position:0 0;
+background-size:100% 100%;
+background-image:url("images/kamehameha2.png");
+background-repeat: no-repeat;
+z-index:10000000000;
+}
+
+
+.ammoDrop {
+  background-size:100% 100%;
+  background-image:url("images/bulletLogo.png");
+  width:2vw;
+  height:4vh;
+  background-repeat:no-repeat;
+  background-position: 0 0;
+  position:fixed;
+  top:5px;
+  left:5px;
+}
+
+.coinDrop {
+  background-size:100% 100%;
+  background-image:url("images/coinDrop.png");
+  width:2vw;
+  height:4vh;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  position:fixed;
+  top:5px;
+  left:5px;
+}
+
+.treasureDrop {
+background-size:100% 100%;
+background-image:url("images/treasure.png");
+width:15vw;
+height:10vh;
+background-repeat:no-repeat;
+background-position:0 0;
+position:fixed;
+}
+
+#dashLogo {
+  background-size:100% 100%;
+  background-image:url("images/dashLogo2.png");
+  width:3vw;
+  height:5vh;
+  background-repeat:no-repeat;
+  background-position:0 0;
+  position:absolute;
+  top:5%;
+  right:7%;
+}
+
+#deathPopup {
+  background-color:#333;
+  width:55vw;
+  height:70vh;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index:9999999999;
+  border:5px #111 solid;
+  border-radius:15px;
+  display:none;
+}
+
+#deathText {
+  font-family:"Silkscreen";
+  font-size:13vh;
+  color:#fff;
+  text-align:center;
+  text-shadow: 2px 2px 3px black;
+
+}
+
+#deathButton {
+  width:13vw;
+  height:13vh;
+  border:none;
+  background-color:#e8c170;
+  position:absolute;
+  left:20%;
+  bottom:10%;
+  border:#bf9e5b 5px solid;
+  border-radius:15px;
+
+  font-size:2.5vh;
+  font-family:"Silkscreen";
+  
+}
+
+#quitButton {
+  width:13vw;
+  height:13vh;
+  border:none;
+  background-color:#a53030;
+  position:absolute;
+  left:50%;
+  bottom:10%;
+  border:#752438 5px solid;
+  border-radius:15px;
+
+  font-size:2.5vh;
+  font-family:"Silkscreen";
+  
+}
+
+#deathButton:active {
+  background-color:#bf9e5b;
+  transform: translateY(4px);
+}
+
+#quitButton:active {
+  background-color:#752438;
+  transform: translateY(4px);
+}
+
+#pausePopup {
+  width:30vw;
+  height:60vh;
+  border:#111 5px solid;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background-color: #333;
+  z-index: 100000000;
+  display:none;
+}
+
+#pauseText {
+  color:#fff;
+  font-family:"Silkscreen";
+  font-size:7vh;
+  text-align:center;
+  text-shadow: 5px 2px #111;
+}
+
+#exitHome {
+  width:15vw;
+  height:13vh;
+  border:none;
+  background-color:#a53030;
+  position:absolute;
+  left:25%;
+  top:38vh;
+  border:#752438 5px solid;
+  border-radius:15px;
+
+  font-size:20px;
+  font-family:"Silkscreen";
+  transition: transform 0.3s ease; 
+  will-change: transform;
+}
+
+#exitHome:active {
+  background-color:#752438;
+  transform: translateY(4px);
+}
+
+#exitHome:hover {
+  transform:translateY(10px);
+}
+
+#resumeBtn {
+  width:15vw;
+  height:13vh;
+  border:none;
+  background-color:#3eda39;
+  position:absolute;
+  left:25%;
+  top:19vh;
+  border:#33b52e 5px solid;
+  border-radius:15px;
+
+  font-size:2.5vh;
+  font-family:"Silkscreen";
+  transition: transform 0.3s ease; 
+  will-change: transform;
+}
+
+#resumeBtn:active {
+  background-color:#33b52e;
+  transform: translateY(4px);
+}
+
+#resumeBtn:hover {
+  transform:translateY(10px);
+}
+
+#underGround {
+width:100vw;
+height:100vh;
+background-color: #fff;
+background-image: url("images/decor/caveFloor.png");
+background-repeat: repeat;
+background-attachment: fixed;
+background-size: 4vw 8vh;
+background-position: 0 0;
+overflow: hidden;
+margin: 0;
+position:fixed;
+top:0;
+left:0;
+z-index:10;
+display:none;
+}
+
+#upstairs {
+width:100vw;
+height:100vh;
+background-color: #fff;
+background-image: url("images/decor/floor2.png"), url("images/decor/floor1.png");
+background-repeat: repeat;
+background-attachment: fixed;
+background-size: 4vw 8vh;
+background-position: 0 0;
+overflow: hidden;
+margin: 0;
+position:fixed;
+top:0;
+left:0;
+}
+
+#undergroundEntrance {
+background-size:100% 100%;
+background-image:url("images/undergroundEntrance.png");
+width:6vw;
+height:6vh;
+position:fixed;
+top:75vh;
+left:35vw;
+z-index:-100;
+}
+
+#alter {
+background-size:100% 100%;
+background-image:url("images/alter.png");
+width:25vw;
+height:50vh;
+position:absolute;
+left:36vw;
+top:25vh;
+}
+
+#alterPopup {
+position:absolute;
+top:50%;
+left:50%;
+transform: translateX(-50%);
+font-family: "Silkscreen";
+font-size:2.5vh;
+color:#fefefe;
+transition: transform 0.3s ease; 
+will-change: transform;
+animation:alterHover 1.5s linear infinite;
+pointer-events:none;
+user-select: none;
+}
+
+
+#ladderPopup {
+position:absolute;
+top:50%;
+left:50%;
+transform: translateX(-50%);
+font-family: "Silkscreen";
+font-size:2.5vh;
+color:#fefefe;
+transition: transform 0.3s ease; 
+will-change: transform;
+animation:alterHover 1.5s linear infinite;
+pointer-events:none;
+user-select: none;
+}
+
+#entrancePopup {
+position:absolute;
+bottom:60%;
+left:50%;
+transform: translateX(-50%);
+font-family: "Silkscreen";
+font-size:2.5vh;
+color:#fff;
+transition: transform 0.3s ease; 
+will-change: transform;
+animation:entranceHover 1.5s linear infinite;
+pointer-events:none;
+user-select: none;
+z-index:9999;
+}
+
+@keyframes entranceHover {
+0% {bottom:60%;}
+50% {bottom:70%;}
+100% {bottom:60%;}
+}
+
+
+@keyframes alterHover {
+0% {top:20%;}
+50% {top:23%;}
+100% {top:20%;}
+}
+
+.bossEnemy {
+background-image:url(images/boss/idle/bossIdle1.png);
+width:15vw;
+height:30vh;
+background-size:100% 100%;
+position:fixed;
+z-index:10000;
+}
+
+#bossFake {
+background-image:url(images/boss/lasering/bossLasering3.png);
+width:15vw;
+height:30vh;
+background-size:100% 100%;
+position:fixed;
+z-index:10000;
+left:50%;
+transform:translateX(-58.5%);
+top:5%;
+}
+.bossEnemy.idle {
+animation: bossIdle .5s infinite;
+}
+
+@keyframes bossIdle {
+  33% {background-image: url('images/boss/idle/bossIdle1.png');}
+  66% {background-image: url('images/boss/idle/bossIdle2.png');}
+  100% {background-image: url('images/boss/idle/bossIdle3.png');}
+}
+
+.bossEnemy.lasering {
+background-image:url(images/boss/lasering/bossLasering3.png);
+animation: bossLasering .5s linear steps(1);
+}
+
+@keyframes bossLasering {
+  33% {background-image: url('images/boss/lasering/bossLasering2.png');}
+  66% {background-image: url('images/boss/lasering/bossLasering3.png');}
+  100% {background-image: url('images/boss/lasering/bossLasering3.png');}
+}
+
+.bossSkull {
+background-image:url(images/testSkull.png);
+width:3vw;
+height:4vh;
+background-size:100% 100%;
+position:fixed;
+}
+
+.bossSpikeSpawning {
+background-image:url(images/spikeNotSpawned.png);
+background-size:100% 100%;
+width:8vw;
+height:16vh;
+position:fixed;
+
+}
+
+.bossSpikeUp {
+background-image:url(images/spike.png);
+background-size:100% 100%;
+width:6vw;
+height:24vh;
+position:fixed;
+
+}
+
+#bossBarFg {
+width:50vw;
+height:5vh;
+background-color:#b6f5db;
+position:absolute;
+top:1vh;
+left:.5vw;
+border-radius:5px;
+}
+
+#bossBarBg {
+width:51vw;
+border-radius:5px;
+height:7vh;
+background-color:#412051;
+position:fixed;
+top:5%;
+left:50%;
+transform:translate(-50%);
+display:none;
+}
+
+.bossLaserSpawning {
+background-image: url(images/laserSegmentOff1.png);
+background-size:100% 20vh;
+background-repeat:repeat-y;
+width:8vw;
+height:100vh;
+position:fixed;
+top:0;
+animation: laserOff .4s infinite steps(1);
+}
+
+@keyframes laserOff {
+  33% {background-image: url('images/laserSegmentOff1.png');}
+  66% {background-image: url('images/laserSegmentOff2.png');}
+  100% {background-image: url('images/laserSegmentOff3.png');}
+}
+
+.bossLaserActive {
+background-image: url(images/laserSegmentOn.png);
+background-size:100% 10vh;
+background-repeat:repeat-y;
+width:8vw;
+height:100vh;
+position:fixed;
+top:0;
+animation: laserOn .4s infinite steps(1);
+}
+
+@keyframes laserOn {
+  33% {background-image: url('images/laserSegmentOn1.png');}
+  66% {background-image: url('images/laserSegmentOn2.png');}
+  100% {background-image: url('images/laserSegmentOn3.png');}
+}
+
+.skullDrop {
+background-size:100% 100%;
+background-image:url("images/ritualSkull.png");
+width:2vw;
+height:4vh;
+background-repeat:no-repeat;
+background-position: 0 0;
+position:fixed;
+top:5px;
+left:5px;
+}
+
+#cutscene {
+width:100vw;
+height:100vh;
+position:fixed;
+top:0;
+left:0;
+z-index:999999999999 !important;
+background-image:url(images/cutscene.gif);
+background-size:100% 100%;
+display:none;
+}
+
+#candle1 {
+position:fixed;
+top:50%;
+left:31vw;
+z-index: 100;
+transform:translateY(-60%);
+}
+
+#candle2 {
+position:fixed;
+top:50%;
+right:34vw;
+z-index: 100;
+transform:translateY(-60%);
+}
+
+#alterDialogue {
+font-family:"Silkscreen";
+font-size: 15px;
+margin-left:20px;
+margin-right:20px;
+}
+
+#chatBox {
+background-size:100% 100%;
+width:28vw;
+height:22vh;
+background-position:0 0;
+will-change:transform;
+transition:transform 0.75s ease;
+background-image:url(images/chatbox.png);
+position:fixed;
+left:34.8%;
+top:84%;
+transform:translateY(100%);
+}
+
+.candleOff{
+background-image:url(images/candle.png);
+width:5vw;
+height:18vh;
+background-size:100% 100%;
+
+}
+
+.candleOn{
+background-image:url(images/candleOn.png);
+width:5vw;
+height:18vh;
+background-size:100% 100%;
+
+}
+
+.mobileMove {
+  width:3rem;
+  height:3rem;
+  position:fixed;
+  z-index:1000000000000;
+  background:none;
+  border:none;
+  background-size:100% 100%;
+  background-position:0 0;
+  
+}
+
+#left{
+  left:5%;
+  bottom:10%;
+  background-image:url(images/left.png);
+}
+#up {
+  left:12%;
+  bottom:16%;
+  background-image:url(images/up.png);
+}
+#down {
+  left:12%;
+  bottom:4%;
+  background-image:url(images/down.png);
+}
+#right{
+  left:19%;
+  bottom:10%;
+  background-image:url(images/right.png);
+}
+
+}

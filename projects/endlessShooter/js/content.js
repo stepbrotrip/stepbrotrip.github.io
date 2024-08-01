@@ -773,26 +773,63 @@ let bullets = [];
 let bulletSpeed = 17;
 
 function createBullet() {
-    if (using_mouse){
-        newAngle = Math.atan2(mouseY - (position.y+gunOffset.yOff), mouseX - (position.x + gunOffset.xOff));
-    }else {
-        newAngle = (gunRotation) * Math.PI / 180;
-    }
-    let newBullet = document.createElement("div");
-    newBullet.classList.add("bullet");
-    let angle = Math.atan2(mouseY - (position.y+gunOffset.yOff), mouseX - (position.x+gunOffset.xOff));
-    angle = angle * (180 / Math.PI);
-    newBullet.style.transform = `rotate(${angle}deg)`;
-    parent.appendChild(newBullet);
-
-    bullets.push( {
-        element: newBullet,
-        position: { x: position.x+(gunOffset.xOff), y: position.y+gunOffset.yOff},
-        velocity: {
-            x: Math.cos(newAngle) * bulletSpeed,
-            y: Math.sin(newAngle) * bulletSpeed
+    if (window.innerWidth <= 1170){
+        let newBullet = document.createElement("div");
+        newBullet.classList.add("bullet");
+        let target;
+        
+        if (enemies.length > 0) {
+            if (enemies.some(enemy => enemy.className === "bossEnemy")) {
+                target = enemies.find(enemy => enemy.className === "bossEnemy");
+            } else {
+                // Ensure getRandomInt is properly defined
+                const randomIndex = getRandomInt(0, enemies.length - 1);
+                target = enemies[randomIndex];
+            }
+        } else {
+            target = { ePosition: { x: 500, y: 500 } }; // Adjust if target should have x and y properties
         }
-    });
+        
+        // Calculate the angle in radians
+        const dx = target.ePosition.x - (position.x + gunOffset.xOff);
+        const dy = target.ePosition.y - (position.y + gunOffset.yOff);
+        let angle = Math.atan2(dy, dx); // Angle in radians
+        let angleDeg = angle * (180 / Math.PI); // Convert radians to degrees
+        
+        newBullet.style.transform = `rotate(${angleDeg}deg)`;
+        parent.appendChild(newBullet);
+        
+        bullets.push({
+            element: newBullet,
+            position: { x: position.x + gunOffset.xOff, y: position.y + gunOffset.yOff },
+            velocity: {
+                x: Math.cos(angle) * bulletSpeed,
+                y: Math.sin(angle) * bulletSpeed
+            }
+        });
+        
+    }else{
+        if (using_mouse){
+            newAngle = Math.atan2(mouseY - (position.y+gunOffset.yOff), mouseX - (position.x + gunOffset.xOff));
+        }else {
+            newAngle = (gunRotation) * Math.PI / 180;
+        }
+        let newBullet = document.createElement("div");
+        newBullet.classList.add("bullet");
+        let angle = Math.atan2(mouseY - (position.y+gunOffset.yOff), mouseX - (position.x+gunOffset.xOff));
+        angle = angle * (180 / Math.PI);
+        newBullet.style.transform = `rotate(${angle}deg)`;
+        parent.appendChild(newBullet);
+
+        bullets.push( {
+            element: newBullet,
+            position: { x: position.x+(gunOffset.xOff), y: position.y+gunOffset.yOff},
+            velocity: {
+                x: Math.cos(newAngle) * bulletSpeed,
+                y: Math.sin(newAngle) * bulletSpeed
+            }
+        });
+    }
 }
 
 let numberOfLasers = 4;
@@ -903,6 +940,18 @@ async function init(){
     });
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
+    if (window.innerWidth <= 1170){
+        window.addEventListener("touchstart", handleTouchDown);
+        window.addEventListener("touchend", handleTouchUp);
+        document.getElementById("left").addEventListener("touchstart", function(){mobileButtonPressed("a");});
+        document.getElementById("right").addEventListener("touchstart", function(){mobileButtonPressed("d");});
+        document.getElementById("up").addEventListener("touchstart", function(){mobileButtonPressed("w");});
+        document.getElementById("down").addEventListener("touchstart", function(){mobileButtonPressed("s");});
+        document.getElementById("left").addEventListener("touchend", function(){mobileButtonReleased("a");});
+        document.getElementById("right").addEventListener("touchend", function(){mobileButtonReleased("d");});
+        document.getElementById("up").addEventListener("touchend", function(){mobileButtonReleased("w");});
+        document.getElementById("down").addEventListener("touchend", function(){mobileButtonReleased("s");});
+    }
     document.addEventListener('mousedown', handleMouseDown);
     document.addEventListener('mouseup', handleMouseUp);
     window.requestAnimationFrame(gameLoop);
@@ -1601,6 +1650,98 @@ function showNoSkullsDialogue(){
     }
 }
 
+function mobileButtonReleased(key){
+    switch(key){
+        case "a":
+        case "A":
+            keysPressed[0] = false;
+            velocity.x = 0;
+            break;
+        
+        case "d":
+        case "D":
+            keysPressed[1] = false;
+            velocity.x = 0;
+            break;
+
+        case "s":
+        case "S":
+            keysPressed[2] = false;
+            velocity.y = 0;
+            break;
+
+        case "w":
+        case "W":
+            keysPressed[3] = false;
+            velocity.y = 0;
+            break;
+    }
+}
+
+function mobileButtonPressed(key){
+    switch(key){
+        case "a":
+        case "A":
+            keysPressed[0] = true;
+            velocity.x = -1;
+            break;
+        
+        case "d":
+        case "D":
+            keysPressed[1] = true;
+            velocity.x = 1;
+            break;
+
+        case "s":
+        case "S":
+            keysPressed[2] = true;
+            velocity.y = 1;
+            break;
+
+        case "w":
+        case "W":
+            keysPressed[3] = true;
+            velocity.y = -1;
+            break;
+
+        case "r":
+        case "R":
+            reload();
+            break;
+
+        case "e":
+        case "E":
+            if (canKameHameHa){
+                kamehameha();
+            }
+            break;
+        
+        case "f":
+        case "F":
+            if (isColliding(playerRect, healingRect)){
+                healWithFountain();
+            }
+            if (isColliding(playerRect, helicopterRect)){
+                winGame();
+            }
+            if (isColliding(playerRect, undergroundEntranceRect)){
+                enterUnderground();
+            }
+            if (isColliding(playerRect, alterRect) && isUnderground){
+                if (ritualSkulls > 0){
+                    ritualSkulls -= 1;
+                    spawnBoss();
+                }else{
+                    showNoSkullsDialogue();
+                }
+            }
+            if (isColliding(playerRect, ladderRect) && isUnderground){
+                enterUpstairs();
+            }
+            break;
+    }
+}
+
 //a d s w
 let leftDown, rightDown, upDown;
 let keysPressed = [false, false, false, false];
@@ -1804,6 +1945,15 @@ function handleKeyUp(event){
 
 
 let shootingInterval;
+
+function handleTouchDown() {
+    mouseLeftDown = true;
+}
+
+function handleTouchUp() {
+    mouseLeftDown = false;
+    
+}
 
 function handleMouseDown(event) {
     if (event.button === 0) {
