@@ -362,8 +362,8 @@
 
 #coinHud {
     background-color:#333;
-    width:16vw;
-    height:10vh;
+    width:14rem;
+    height:3rem;
     position:fixed;
     bottom:5%;
     left:5%;
@@ -1295,8 +1295,8 @@ left:46vw;
 
 #coinHud {
   background-color:#333;
-  width:16vw;
-  height:10vh;
+  width:14rem;
+  height:3rem;
   position:fixed;
   top:5%;
   left:5%;
@@ -1480,7 +1480,7 @@ user-select: none;
   width:14vw;
   height:10vh;
   border:4px #111 solid;
-  bottom:5%;
+  top:5%;
   z-index:10000000;
   right:5%;
   opacity:95%;
@@ -2051,37 +2051,83 @@ background-size:100% 100%;
 
 }
 
+#mobileButtons {
+  width:12rem;
+  height:9rem;
+  position:fixed;
+  bottom:3%;
+  left:3%;
+  z-index:10000000000;
+}
+
+#mobileInteract {
+  width:12rem;
+  height:12rem;
+  position:fixed;
+  bottom:3%;
+  right:3%;
+  z-index:10000000000;
+}
+
 .mobileMove {
   width:3rem;
   height:3rem;
-  position:fixed;
+  position:absolute;
   z-index:1000000000000;
   background:none;
   border:none;
   background-size:100% 100%;
   background-position:0 0;
-  
+  transition:transform 0.3s ease;
+}
+
+.mobileMove:active {
+  transform:translateY(-5px);
 }
 
 #left{
   left:5%;
-  bottom:10%;
+  top:25%;
   background-image:url(images/left.png);
 }
 #up {
-  left:12%;
-  bottom:16%;
+  left:38%;
+  top:5%;
   background-image:url(images/up.png);
 }
 #down {
-  left:12%;
-  bottom:4%;
+  left:38%;
+  top:50%;
   background-image:url(images/down.png);
 }
 #right{
-  left:19%;
-  bottom:10%;
+  right:5%;
+  top:25%;
   background-image:url(images/right.png);
+}
+
+#shoot {
+  background-image:url(images/shoot.png);
+  right:25%;
+  top:25%;
+}
+
+#dash {
+  right:30%;
+  top:60%;
+  background-image:url(images/dash.png);
+}
+
+#special {
+  right:60%;
+  top:25%;
+  background-image:url(images/special.png);
+}
+
+#interact {
+  right:65%;
+  top:60%;
+  background-image:url(images/interact.png);
 }
 
 }

@@ -838,28 +838,65 @@ let newKameAngle;
 const kameHameHas = [];
 function kamehameha() {
     canKameHameHa = false;
-    let startingX = position.x -30;
+    let startingX = position.x -30; 
     for (let i = 1; i < numberOfLasers; i++) {
-        newKameAngle = Math.atan2(mouseY - position.y, mouseX - position.x);
-        angleOfKame = newKameAngle * (180 / Math.PI);
-        let kameSpeed = 12;
-        let newKameHameHa = document.createElement("div");
-        if (getRandomInt(0,4) <= 1){
-            newKameHameHa.classList.add("kamehameha1");
-        }else {
-            newKameHameHa.classList.add("kamehameha2");
-        }
-        newKameHameHa.style.transform += `rotate(${angleOfKame}deg)`;
-        parent.appendChild(newKameHameHa);
-
-        kameHameHas.push({
-            element: newKameHameHa,
-            position: { x: startingX+(i*30), y: position.y },
-            velocity: {
-                x: Math.cos(newKameAngle) * kameSpeed,
-                y: Math.sin(newKameAngle) * kameSpeed
+        if (window.innerHeight <= 1170){
+            let target;
+            
+            if (enemies.length > 0) {
+                if (enemies.some(enemy => enemy.className === "bossEnemy")) {
+                    target = enemies.find(enemy => enemy.className === "bossEnemy");
+                } else {
+                    // Ensure getRandomInt is properly defined
+                    const randomIndex = getRandomInt(0, enemies.length - 1);
+                    target = enemies[randomIndex];
+                }
+            } else {
+                target = { ePosition: { x: 500, y: 500 } }; // Adjust if target should have x and y properties
             }
-        });
+            
+            newKameAngle = Math.atan2(target.ePosition.y - position.y, target.ePosition.x - position.x);
+            angleOfKame = newKameAngle * (180 / Math.PI);
+            let kameSpeed = 12;
+            let newKameHameHa = document.createElement("div");
+            if (getRandomInt(0,4) <= 1){
+                newKameHameHa.classList.add("kamehameha1");
+            }else {
+                newKameHameHa.classList.add("kamehameha2");
+            }
+            newKameHameHa.style.transform += `rotate(${angleOfKame}deg)`;
+            parent.appendChild(newKameHameHa);
+
+            kameHameHas.push({
+                element: newKameHameHa,
+                position: { x: startingX+(i*30), y: position.y },
+                velocity: {
+                    x: Math.cos(newKameAngle) * kameSpeed,
+                    y: Math.sin(newKameAngle) * kameSpeed
+                }
+            });
+        }else{
+            newKameAngle = Math.atan2(mouseY - position.y, mouseX - position.x);
+            angleOfKame = newKameAngle * (180 / Math.PI);
+            let kameSpeed = 12;
+            let newKameHameHa = document.createElement("div");
+            if (getRandomInt(0,4) <= 1){
+                newKameHameHa.classList.add("kamehameha1");
+            }else {
+                newKameHameHa.classList.add("kamehameha2");
+            }
+            newKameHameHa.style.transform += `rotate(${angleOfKame}deg)`;
+            parent.appendChild(newKameHameHa);
+
+            kameHameHas.push({
+                element: newKameHameHa,
+                position: { x: startingX+(i*30), y: position.y },
+                velocity: {
+                    x: Math.cos(newKameAngle) * kameSpeed,
+                    y: Math.sin(newKameAngle) * kameSpeed
+                }
+            });
+        }
     }
 }
 
@@ -934,15 +971,7 @@ async function init(){
     await loadImages();
     createPlayer();
     spawnGun();
-    window.addEventListener('mousemove', (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-    });
-    window.addEventListener("keydown", handleKeyDown);
-    window.addEventListener("keyup", handleKeyUp);
     if (window.innerWidth <= 1170){
-        window.addEventListener("touchstart", handleTouchDown);
-        window.addEventListener("touchend", handleTouchUp);
         document.getElementById("left").addEventListener("touchstart", function(){mobileButtonPressed("a");});
         document.getElementById("right").addEventListener("touchstart", function(){mobileButtonPressed("d");});
         document.getElementById("up").addEventListener("touchstart", function(){mobileButtonPressed("w");});
@@ -951,9 +980,18 @@ async function init(){
         document.getElementById("right").addEventListener("touchend", function(){mobileButtonReleased("d");});
         document.getElementById("up").addEventListener("touchend", function(){mobileButtonReleased("w");});
         document.getElementById("down").addEventListener("touchend", function(){mobileButtonReleased("s");});
-    }
+        document.getElementById("shoot").addEventListener("touchstart", handleTouchDown);
+        document.getElementById("shoot").addEventListener("touchend", handleTouchUp);
+    }else{
     document.addEventListener('mousedown', handleMouseDown);
     document.addEventListener('mouseup', handleMouseUp);
+    window.addEventListener('mousemove', (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    });
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+    }
     window.requestAnimationFrame(gameLoop);
 }
 
@@ -1704,11 +1742,6 @@ function mobileButtonPressed(key){
             velocity.y = -1;
             break;
 
-        case "r":
-        case "R":
-            reload();
-            break;
-
         case "e":
         case "E":
             if (canKameHameHa){
@@ -1737,6 +1770,13 @@ function mobileButtonPressed(key){
             }
             if (isColliding(playerRect, ladderRect) && isUnderground){
                 enterUpstairs();
+            }
+            break;
+
+        case "m":
+            if (canDash){
+                dash();
+                canDash = false;
             }
             break;
     }
@@ -2191,14 +2231,7 @@ function updateHealthBar() {
     let healthBar = document.getElementById("hpBarFg");
     let viewportWidth = window.innerWidth;
     let healthBarWidthVw = (playerHealth * 2 / viewportWidth) * 100;
-    let healthBarUI = document.getElementById("coinHud");
 
-    if (healthBarWidthVw > 14){
-
-        healthBarUI.style.width = (healthBarWidthVw+2) + "vw";
-    }else {
-        healthBarUI.style.width = 16 + "vw";
-    }
     healthBar.style.width = healthBarWidthVw + "vw";
 }
 
